@@ -1,0 +1,173 @@
+
+.bussinessDetail{
+  width: 100%;
+  height: 100%;
+}
+.bussMes1{
+  margin-top: 10rpx;
+  background: white;
+  border-top: 2px solid #5DBBFF;
+}
+.bussMes2{
+  margin-top: 10rpx;
+  background: white;
+  border-top: 2px solid #FCD794;
+}
+.bussMes3{
+  margin-top: 10rpx;
+  background: white;
+  border-top: 2px solid #D9E0E8;
+}
+.buss-top{
+  display: flex;
+  justify-content: space-between
+}
+.buss-top-contact{
+  margin-top: 20rpx;
+  margin-left: 3%;
+}
+.buss-top-type1{
+  margin-top: 20rpx;
+  margin-right: 3%;
+  color: #5DBBFF;
+}
+.buss-top-type2{
+  margin-top: 20rpx;
+  margin-right: 3%;
+  color: #FCD794;
+}
+.buss-top-type3{
+  margin-top: 20rpx;
+  margin-right: 3%;
+  color: #D9E0E8;
+}
+.buss-time{
+  margin-left: 3%;
+  font-size: 28rpx;
+  color: #A7A7A7;
+}
+.buss-abstract{
+  margin-top: 20rpx; 
+  margin-left: 3%;
+  display: flex;
+  font-size: 29rpx;
+}
+.abstract-title{
+  width: 20%;
+}
+.abstract-text{
+  width: 74%;
+  color: #A7A7A7;
+}
+.buss-img{
+  margin-left: 3%;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #ddd;
+}
+.buss-img image{
+  width: 170rpx;
+  height: 170rpx;
+  margin-right: 10rpx;
+}
+.buss-founder{
+  margin-left: 3%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.buss_record{
+  background: white;
+  margin-top: 20rpx; 
+}
+.record_top{
+  margin-left: 3%;
+  height: 70rpx;
+  border-bottom: 1px solid #ddd;
+
+}
+.record_title{
+  line-height: 70rpx;
+  margin-top: 20rpx;
+  font-size: 27rpx;
+}
+.record-list{
+  margin-top: 30rpx;
+  margin-left: 3%;
+}
+.record-mes{
+  /* height: 170rpx; */
+  /* background: yellow; */
+  display: flex;
+}
+.record-time{
+  color: #8E8E8E;
+  width: 15%;
+  margin-top: 10rpx;
+}
+.record-mon-day{
+  font-size: 27rpx;
+}
+.record-xian{
+  width: 13%;
+  overflow: hidden; 
+}
+.record-circular0{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid #FAB029;
+}
+.record-circular1{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid #2BA5FF;
+}
+.record-circular2{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid #FF8466;
+}
+.record-circular3{
+    width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid #32D381;
+}
+.record-circular4{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid #32D381;
+}
+.record-circular5{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid #32D381;
+}
+
+.record-line{
+  width: 2rpx;
+   height: 100%; 
+  background: #DDD;
+   
+  margin-left:19rpx; 
+}
+.record-content{
+  margin-top: 10rpx;
+  width: 67%;
+}
+.record-record{
+  font-size: 35rpx;
+  margin-right: 3%;
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+.record-record-detail{
+  font-size: 25rpx;
+  color: #9E9E9E;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

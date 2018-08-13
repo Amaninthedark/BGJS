@@ -1,0 +1,37 @@
+<view class="page"> 
+    <!--<view class="header_box">
+    <view class="header_img"> 
+        <image wx:if="{{avatar}}" src="{{avatar}}"/>
+        <image wx:else src="/image/logo.png"/>
+    </view>
+    <view class="header_title">
+        <text wx:if="{{userName}}">{{userName}}</text>
+        <text wx:else class="normal">纺织展会助手</text>
+    </view>      
+     
+    </view>-->
+    <view class="container">
+    <view wx:if="{{hasCard}}" class="img-box card-box">
+         <image src="{{qrUrl}}" mode="aspecFill"/>
+         <!--<image src="{{qrUrl}}?x-oss-process=image/resize,m_fill,h_245,w_220" mode="top" bindtap="toBig"/>-->
+        <text class="code_pic">微信扫描二维码 添加我的名片 </text>
+        <!--<image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>-->
+    </view>
+    <view wx:else  class="img-box shape-box">
+        <image src="/image/shape.png"/>
+        <text class="none_pic">您还没有自己的名片 </text>
+    
+    </view>
+    </view>
+    
+    <navigator wx:if="{{hasCard}}" url="./pages/editMyCard/editMyCard" class="add"> 
+             <image class="add_img" src="/image/edit_icon.png"/>
+            
+     </navigator>
+      <navigator wx:else url="./pages/createMyCard/createMyCard" class="add"> 
+             <image class="add_img" src="/image/add.png"/>
+            
+     </navigator>
+ 
+   
+</view>

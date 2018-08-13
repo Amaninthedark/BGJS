@@ -1,0 +1,20 @@
+/* pages/ad/goodwx.wxss */
+page{
+    background-color: #fff;
+}
+view{
+    margin-bottom: 20rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #20a0ff;
+    text-decoration: underline;
+}
+video{
+    width: 100%;
+    height: 422.5rpx;
+}
+image{
+    display: block;
+    margin: 10rpx auto;
+    width: 100%;
+}

@@ -1,0 +1,51 @@
+<view class="page sample_list_page">
+  
+    
+    <!--sampleList-->
+    <view wx:if="{{samples.length==0}}" class="no_sample_list">暂无样品</view>
+        <view class="sample_list clearfix">
+
+        <view class="sample_item" wx:for="{{samples}}" wx:key="{{index}}" data-key="{{item.publicKey}}"  bindtap="sampleAction" >
+            <view class="sample">
+             
+                 
+                <view class="sample_img"> 
+                   
+                    <image class="image choose_image" wx:if="{{item.samplePicKey.length>0}}" src="{{item.samplePicKey}}"/> 
+                    <view wx:else class="choose_image">
+                        <image class="image" src="/image/default_sample.png"/>
+                    </view>
+                </view>
+                <view class="sample_content">
+                  <text>{{item.attributes[1]}}</text>
+                  <text>{{item.attributes[2] || ''}}</text>
+                  <text>{{item.attributes[3] || ''}}</text>
+                  <text wx:if="{{item.attributes[4] && item.attributes[5]}}">{{item.attributes[4]}}/{{item.attributes[5]}}</text>
+                  <text wx:else>{{item.attributes[4] || ''}}{{item.attributes[5] || ''}}</text>
+                </view>
+            </view>
+            <view data-id="{{item.sampleId}}"  class="time_sample" catchtap="toRecord">
+               <image src="/image/time.png"/>
+            </view>
+   
+           
+         </view>
+
+      <!--sample_item end-->
+      
+        
+        
+        </view>
+        <view class="mb50"></view>
+         
+    <!--</scroll-view>-->
+     <view class="loading-view">
+        <loading hidden="{{!hidden}}" bindchange="loadingChange">
+        加载中...
+        </loading>
+    </view>
+
+
+    
+
+</view>

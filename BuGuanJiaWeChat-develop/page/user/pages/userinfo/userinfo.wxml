@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="panel ul">
+        <view class="li"><view>姓名</view><text>{{user.userName}}</text></view>
+        <view class="li"><view>职位</view><text>{{user.position}}</text></view>
+        <view class="li"><view>所在地</view><text>{{user.address}}</text></view>
+        <view class="li"><view>联系电话</view><text>{{user.telephone}}</text></view>
+        <view class="li"><view>出生年月</view><text>{{user.birthday}}</text></view>
+    </view>
+</view>

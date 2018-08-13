@@ -1,0 +1,64 @@
+<view class="page">
+  <form bindsubmit="formSubmit">
+    <view class="white-wrap">
+      <view class="section">
+        <text class="input-label img-label">展厅照片</text>
+        <view class="weui-uploader__bd public_pics">
+          <view class="weui-uploader__files">
+              
+              <view wx:if="{{imageSrc}}" class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="{{imageSrc}}" data-src="{{imageSrc}}" mode="aspectFill" bindtap="showActions" />
+                  <text class="cancel-text-btn" catchtap="handleClearImg">删除</text>
+              </view>
+          </view>
+          <view class="weui-uploader__input-box">
+              <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+          <input name="companyPhoto" value="{{imageKey}}" style="display:none;"></input>
+        </view>
+      </view>
+      <view class="section">
+        <text class="input-label">公司全称</text>
+        <input  type="text" placeholder="输入公司全称" placeholder-class="color9b9b9b" disabled value="{{name}}"/>
+      </view>
+      <view class="section">
+        <text class="input-label">主营业务</text>
+        <input  type="text" placeholder="输入主营业务" name="scope" placeholder-class="color9b9b9b" value="{{scope}}" />
+      </view>
+      <view class="section">
+        <text class="input-label">所在区域</text>
+        <view wx:if="{{longitude && latitude}}" class="location-label blue-text" bindtap="handleLookLocation">已选择，查看</view>
+        <view wx:else class="location-label" catchtap="handleChooseLoation">选择所在区域</view>
+        <view class="do-more-box"><image src="/image/slide-down.png" class="do-more-icon" catchtap="handleChooseLoation" /></view>
+        <input name="theodolite" value="{{longitude && latitude ? longitude + ',' + latitude  : ''}}" style="display:none;"></input>
+      </view>
+      <view class="section">
+        <text class="input-label">详细地址</text>
+        <input  type="text" placeholder="输入详细地址" name="address" placeholder-class="color9b9b9b" value="{{address}}" bindinput="handleBindAddress"/>
+      </view>
+      <view class="section">
+        <text class="input-label">公司规模</text>
+        <picker mode="selector" class="item-select" name="scale" range="{{companySize}}" value="{{sizeIndex}}" bindchange="handleSizeSelect"   >
+          <text>{{companySize[sizeIndex]}}</text>
+        </picker>
+        <view class="do-more-box"><image src="/image/slide-down.png" class="do-more-icon" /></view>
+      </view>
+      <view class="section">
+        <text class="input-label">联系人</text>
+        <input  type="text" placeholder="输入联系人名称" name="linkman" placeholder-class="color9b9b9b" value="{{linkman}}" />
+      </view>
+      <view class="section">
+        <text class="input-label">手机号</text>
+        <input  type="text" placeholder="默认注册的手机号"  placeholder-class="color9b9b9b" disabled value="{{telephone}}" />
+      </view>
+      <view class="section">
+        <text class="input-label">公司简介</text>
+        <textarea placeholder="输入公司简介" name="companyDesc" placeholder-class="color9b9b9b" value="{{companyDesc}}" />
+      </view>
+    </view>
+    
+    <view class="fiexd-100bottom">
+      <button formType="submit">保存</button>
+    </view>
+  </form>
+</view>

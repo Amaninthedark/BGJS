@@ -1,0 +1,52 @@
+<!-- 搜索框 -->
+<view class="top-search">
+  <view class="input-box">
+    <input placeholder="请输入客户名称" value="{{inputVal}}" bindinput="bindKeyInput"></input>
+    <image class="search-icon" src="/image/search_icon.png"></image>
+  </view>
+  <view class="search-btn" hidden="{{inputVal == ''}}" bindtap="handlecancelSearch">
+    取消
+  </view>
+</view>
+
+<!-- 主要内容 -->
+<scroll-view wx:if="{{scrollList.length}}" class="scroll-con" scroll-y scroll-top="{{scrollTop}}" bindscroll="handleScroll">
+  <view wx:for="{{scrollList}}" wx:key="*this" id="view_{{item}}">
+    <view class="item-title" hidden="{{contactObj[item].ishidden}}">{{contactObj[item].title}}</view>
+    <view class="card-li" wx:for="{{contactObj[item].list}}" wx:key="index" data-mes='{{item}}' hidden="{{item.ishidden}}" bindtap="contactTap">
+      <view class="info-box">
+      <view class="info-company">
+          {{item.name}}
+        </view>
+          <view class="info-top">
+          <text class="big-name">电话:{{item.telephone}}</text>
+          <!-- <text>{{item.position}}</text> -->
+        </view>
+      </view>
+     
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 侧边字母  -->
+<view class="side-az" wx:if="{{scrollList.length}}">
+  <!-- <image src="/image/card_search.png" wx:if="{{canIUserScroll}}"></image>  -->
+  <view class="scroll-btn-group" style='height:{{rightHeight}}px'>
+    <view wx:for="{{scrollList}}" wx:key="*this" data-key="{{item}}" bindtap="handleScrollView">
+      <text>{{contactObj[item].title}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 没有数据  -->
+<view class="empty-view" wx:if="{{!scrollList.length && isLoaded}}">
+  <image src="/image/sad.png" mode="aspectFit"></image>
+  <view class="view-one">您还未有任何客户，赶快去添加吧</view>
+  <view>拓展人脉丰富自己的圈子吧</view>
+</view>
+
+<!-- 没有搜索到东西  -->
+<view class="empty-search-view" wx:if="{{scrollList.length && emptySearch}}">
+  <image src="/image/sad.png" mode="aspectFit"></image>
+  <view>没有搜索到相关客户： {{inputVal}}</view>
+</view>

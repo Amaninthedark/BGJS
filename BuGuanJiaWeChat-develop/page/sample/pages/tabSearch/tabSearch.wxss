@@ -1,0 +1,127 @@
+@import "../../../common/lib/weui.wxss";
+page{
+  background-color: #fff;
+}
+.head-search{
+  position: relative;
+  height: 100rpx;
+  padding: 20rpx 30rpx;
+  background-color: #eeeef4;
+  box-sizing: border-box;
+}
+.icon-search{
+  position: absolute;
+  top: 35rpx;
+  left: 50rpx;
+  z-index:99;
+}
+.head-search input{
+  padding-left: 70rpx;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.head-search .search-btn{
+  text-align: right;
+  color: #20a0ff;
+  line-height: 60rpx;
+}
+.btn-group{
+   display: flex;
+   justify-content:center;
+   margin-bottom: 20rpx;
+}
+.btn-group>button{
+  width: 158rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx #dcdcdc solid;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.btn-group .active{
+  border-color: #20a0ff;
+  color: #fff;
+  background-color: #20a0ff;
+  
+}
+.text{
+   margin:  10rpx 0;
+}
+.content{
+   padding: 30rpx;
+}
+
+.tab-cloud button{
+  border: 1rpx #efeff4 solid; 
+  margin: 20rpx 20rpx 20rpx 0;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  border-radius: 2px;
+  background-color: #efeff4;
+}
+.tab-cloud-item{
+   display: inline-block
+}
+.tab-cloud .tab-cloud-item:nth-child(2n) button{
+  border-color: #dcdcdc;
+  background-color: #fff;
+}
+.tab-cloud .tab-cloud-item:nth-child(4n) button{
+  margin-right: 0;
+}
+.tab-cloud button .count{
+   background-color: #9b9b9b;
+   color: #fff;
+   display: inline-block;
+   height: 36rpx;
+   width: 36rpx;
+   font-size: 20rpx;
+   line-height: 36rpx;
+   border-radius: 50%;
+}
+.content .tab-cloud .tab-cloud-item .tab-button-choosed{
+  background-color: #20a0ff;
+  border-color: #20a0ff; 
+  color: #fff;
+}
+
+.tab-cloud .tab-button-choosed .count{
+   background-color: #fff;
+   color: black;
+}
+
+.footer{
+   padding: 0;
+   margin: 0;
+   width: 100%;
+   background: #fff;
+   position: fixed;
+   bottom: 0;
+   height: 93rpx;
+}
+button::after{
+   border: none;
+}
+.footer>.reset{
+   width: 50%;
+   display: inline-block;
+   border-radius: 0rpx;
+   margin: 0;
+}
+.footer>.comfirm{
+   width: 50%;
+   display: inline-block;
+   border-radius: 0rpx;
+   border: none;
+   margin: 0;
+
+}
+.tab-cloud{
+   margin-bottom:100rpx; 
+}

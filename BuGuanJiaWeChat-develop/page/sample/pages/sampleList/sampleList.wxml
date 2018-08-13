@@ -1,0 +1,106 @@
+<view class="page sample_list_page">
+   <view class="page_hd"></view>
+
+   <view class="page__bd">
+      <view class="weui-search-bar search-sample">
+        <view class="search-view-btn" bindtap="handleGoSearch">
+          <image src="/image/search_icon.png" />
+          <text>{{key ? key : '请输入样品编号'}}</text>
+          <view class="scan" catchtap="scanCode">
+            <image src="/image/scan.png" />
+          </view>
+         </view>
+      </view>
+      <view class="order-sample">
+         <view class="order-sample-rule {{ishuahai ? 'huahai-style' : ''}}" data-key="no" data-up="5" data-down="6" bindtap="sortList">
+            <text>按编号</text>
+            <image src="{{img_no}}"></image>
+            <text class="order-sample-line {{ishuahai ? 'huahai-order-sample-line' : ''}}">|</text>
+         </view>
+         
+         <view class="order-sample-rule" data-key="width" data-up="7" data-down="8"  bindtap="sortList"  wx:if="{{!ishuahai}}">
+            <text>按门幅</text>
+            <image src="{{img_width}}"></image>
+            <text class="order-sample-line">|</text>
+         </view>
+
+         <view class="order-sample-rule" data-key="weight" data-up="9" data-down="10"  bindtap="sortList" wx:if="{{!ishuahai}}" >
+            <text>按克重</text>
+            <image src="{{img_weight}}"></image>
+            <text class="order-sample-line">|</text>
+         </view>
+
+         <view class="order-sample-rule {{ishuahai ? 'huahai-style' : ''}}" data-key="new" data-up="1" data-down="2"  bindtap="sortList">
+            <text>最新</text>
+            <image src="{{img_new}}"></image>
+         </view>
+      </view>
+   </view>
+   <!--sampleList-->
+   <view class="search-item">
+     <view wx:if="{{key}}">{{key}} <icon type="clear" size="20" data-key="key" bindtap="handleCancelSearch" /></view>
+     <!-- <view class="classname">{{havePics}}</view> -->
+      <view wx:if="{{havePics != ''}}"><text wx:if="{{havePics == '1'}}">有图</text><text wx:else>无图</text> <icon type="clear" size="20" data-key="havePics" bindtap="handleCancelSearch" /></view>  
+   </view>
+   
+   <view wx:if="{{samples.length==0}}" class="no_sample_list">暂无样品</view>
+   <view class="sample_list"  bindlongtap="handleLongTap">
+      <view class="sample_item" wx:for="{{samples}}" wx:key="{{index}}" id="{{item.sampleId}}"  bindtap="handleGoSample" >
+         <view class="choose {{selecting ? 'choosing' : ''}}" data-index="{{index}}" catchtap="handleSelect">
+            <image src="{{item.selected==0 ? '/image/none_choose.png' : '/image/choosed.png'}}" />
+         </view>
+         <view class="sample">
+            <view class="sample_img">
+              <image class="image choose_image" wx:if="{{item.samplePicKey.length>0}}" src="{{item.samplePicKey}}" mode="aspectFill" />
+               <view wx:else class="choose_image">
+                  <image class="image" src="/image/default_sample.png" />
+               </view> 
+            </view>
+            <view class="sample_content">
+                 <block wx:if="{{ishuahai}}">
+
+                  <block wx:for="{{item.sampleAttributes}}" wx:key="{{index}}" wx:for-item="j"> 
+                    <block wx:if="{{index<4}}">
+                     <text>{{j.value}}</text>
+                    </block>
+                     <block wx:else> 
+                  </block>
+                  </block> 
+                 
+                </block>
+                <block wx:else> 
+                  <text>{{item.attributes[1]}}</text>
+               <text>{{item.attributes[2] || ''}}</text>
+               <text>{{item.attributes[3] || ''}}</text>
+               <text wx:if="{{item.attributes[4] && item.attributes[5]}}">{{item.attributes[4]}}/{{item.attributes[5]}}</text>
+               <text wx:else>{{item.attributes[4] || ''}}{{item.attributes[5] || ''}}</text>
+                 </block> 
+            </view>
+         </view>
+      </view>
+   </view>
+
+   <!--</scroll-view>-->
+   <view class="loading-view">
+      <loading hidden="{{!hidden}}" bindchange="loadingChange">
+         加载中...
+      </loading>
+   </view>
+ 
+   <view class="side_btn">
+
+    <view bindtap="handleGoBasket">
+      <image src="/image/side_basket.png" />
+      <text wx:if="{{selectArr.length}}" class="select-count">{{selectArr.length}}</text>
+    </view>
+    <!-- <view bindtap="handleSelectIO">
+      <image src="/image/side_change.png" />
+    </view> -->
+
+    <navigator wx:if="{{addsample}}" url="../addSample/addSample">
+      <view>
+        <image src="/image/side_add.png" />
+      </view>
+    </navigator>
+   </view>
+</view>

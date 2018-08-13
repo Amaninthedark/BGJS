@@ -1,0 +1,75 @@
+<view class="page sample_list_page"> 
+    
+    <!--sampleList-->
+    <view wx:if="{{samples.length==0}}" class="no_sample_list">暂无样品</view>
+    <!--<scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper=" topLoad" bindscrolltolower="pullUpLoad" bindscroll="scroll">-->
+        <view class="sample_list mb50">
+        <!--<view class="sample_item item_new" >
+            <navigator class="sample" url="../addSample/addSample">
+              
+                    
+                    <view  class="add_new">
+                  
+                     <text>+</text>
+                       
+                    </view>
+             
+            </navigator>
+           
+         </view>-->
+        <view class="sample_item" wx:for="{{samples}}" wx:key="{{index}}" id="{{item.sampleId}}"  bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="sampleAction" >
+            <view class="sample">
+                <view class="sample_img"> 
+                    <image class="image" wx:if="{{item.samplePicFront!=''}}" src="{{item.samplePicFront}}?x-oss-process=image/resize,m_fill,h_150,w_144"/> 
+                    <view wx:else>
+                        <image class="image" src="/image/default_sample.png"/>
+                    </view>
+                </view>
+                <view class="sample_content">
+                    <text>{{item.itemNo}}</text>
+                    <text>{{item.remark}}</text>
+                    <text>{{item.component}}</text>
+                    <text wx:if="{{item.weight.length>0}}">{{item.width}}/{{item.weight}}</text>
+                </view>
+            </view>
+           
+         </view>
+      
+        
+        
+        </view>
+         
+    <!--</scroll-view>-->
+     <view class="loading-view">
+    <loading hidden="{{!hidden}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+  </view>
+  <action-sheet hidden="{{!showActionsSheet}}" bindchange="hideActionSheet">
+    <!--<action-sheet-item bindtap="editSample">编辑样品</action-sheet-item>-->
+    <action-sheet-item class="warn" bindtap="toDeleteSample">删除样品</action-sheet-item>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+<view class="btn_group">
+    <view class="btn_left btn" bindtap="showCode"><image src="/image/share.png"/><text>分享</text></view>
+   <view class="btn_right btn">
+    <navigator url="../addSample/addSample">
+        <image src="/image/add_sample.png"/><text>新增</text>
+    </navigator>
+    </view>
+</view>
+<view class="shadow" hidden="{{!shadow}}" bindtap="hiddenShadow"></view>
+<view class="code" hidden="{{!shadow}}"><image src="{{qrUrl}}?x-oss-process=image/resize,m_fill,h_282,w_250" mode="top"/><text>微信扫描二维码\n 分享我采集的样品和名片</text> </view>
+    
+    <!--sampleList-->
+    <!--<view class="tabbar">
+        <navigator url="../addSample/addSample"><image src="/image/add.png"/></navigator>
+        <navigator url="../addSample/addSample">
+        <image src="/image/add.png" animation="{{animationcollect}}" class="image-style" bindtap="hidePlus"></image>
+        </navigator>
+        <image src="/image/add.png" animation="{{animationTranspond}}" class="image-style" bindtap="hidePlus"></image>
+        <image src="/image/add.png" animation="{{animationInput}}" class="image-style" bindtap="toDeleteSample"></image>
+        <image src="/image/add.png" animation="{{animationPlus}}" class="image-plus-style" bindtap="plus"></image>
+  
+  </view>-->
+</view>

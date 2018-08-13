@@ -1,0 +1,63 @@
+<view class='searchBuss'>
+  <!-- 搜索框 -->
+  <view class="top-search" bindtap='toSearchContact'>
+    <view class="input-box">
+      <input placeholder="{{inputName}}"  disabled="disabled" ></input>
+      <image wx:if="{{inputName == '搜索联系人'}}" class="search-icon" src="/image/search_icon.png"></image>
+      <view wx:if="{{inputName != '搜索联系人'}}"class='search-clean' catchtap='cleanInput'>清空</view>
+    </view>
+  </view>
+  <view class='choice'>
+    <view class='start-time'>
+      <view class='start-time-text'>
+        开始时间
+      </view>
+      <view class='start-time-choice'>
+        <picker mode="date" value="{{date}}" end="{{date2}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{data}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='end-time'>
+      <view class='end-time-text'>
+        结束时间
+      </view>
+      <view class='end-time-choice'>
+        <picker mode="date" value="{{date}}" end="{{date2}}" bindchange="bindDateChange2">
+          <view class="picker">
+            {{data2}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='buss-progrss'>
+      <view class='buss-progrss-text'>
+        商机进度
+      </view>
+      <view class='progress-status'>
+        <view class="{{check1 == true ? 'status-select' : 'status'}}"  data-index='1' bindtap='stausTap'>
+          进行中
+        </view>
+        <view class="{{check2 == true ? 'status-select' : 'status'}}" data-index='2' bindtap='stausTap'>
+          已完结
+        </view>
+        <view class="{{check3 == true ? 'status-select' : 'status'}}"  data-index='3' bindtap='stausTap'>
+          已放弃
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='bottom'>
+    <view class='bottom-reset'  bindtap='resetall'>
+      重置
+    </view>
+    <view class='bottom-confirm' bindtap='confirm'>
+      确定
+    </view>
+  </view>
+</view>

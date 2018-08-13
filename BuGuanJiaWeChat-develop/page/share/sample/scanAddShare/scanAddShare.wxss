@@ -1,0 +1,265 @@
+.page-wrap{
+  margin-bottom: 120rpx;
+}
+.panel{
+   
+   
+    
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.sample_detail,.provider_detail{
+    padding-bottom: 10px;
+}
+.watcher{
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    /*margin-bottom: 80px;*/
+    /*width: 100%;*/
+}
+.mb80{
+    margin-bottom: 80px;
+}
+.blank{
+    height: 70px;
+    display: block;
+    content: " ";
+}
+.unread{
+    margin-top: 55px;
+}
+.title{
+    padding:10px 0; 
+    align-items:center;  
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    clear: both;
+    width: 94%;
+    margin-left: 3%;
+
+}
+.title .text{
+   padding: 0;
+   width: 100%;
+   /*float: left;*/
+   font-size: 0.946rem;
+   color: #4a4a4a;
+  text-align: center;
+
+}
+
+.title .line{
+    -webkit-box-flex:1;
+    flex-grow:1;
+    height: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+.title .slide{
+    width: 50%;  
+   padding-bottom: 10px;
+   padding-top: 10px;
+    clear: both;
+}
+.title .slide image{
+    width: 15px;
+    height: 8px;
+    float: right;
+    margin-right: 15px;
+}
+.ball{
+    margin-top: 60px;
+}
+
+.content{
+    clear: both;
+    overflow: hidden;
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+
+}
+.content .ul{
+    width: 100%;    
+    /*border-bottom: 1px solid #e5e5e5;*/
+    margin-top: 10px;
+    
+
+}
+.img_content .ul .li{
+    width: 33.3%;
+    display: block;
+   
+    height: 90px;
+    float: left;
+    margin-bottom: 10px;
+    overflow: hidden;
+    
+
+}
+.img_content .ul .li .img{
+    width: 95%;
+    height: 90px;
+    margin: 0 auto;
+    margin-left: 7.5%;
+    text-align: center;
+    overflow: hidden;
+    /*position: relative;*/
+}
+
+.share_sample_img{
+    width: 100%;
+    height: 90px;   
+    position: relative;
+    z-index: 100;
+}
+.content .ul .li .choose_box{
+    width: 85%;
+    position: relative;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 7.5%;
+    background: #eaeaec;
+    z-index: 200;
+}
+.content .ul .li .choose_img{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    margin-top: 30px;
+    
+}
+.img_content .delete_btn{
+    position: relative;  
+    width: 25px;
+    height: 25px;
+    z-index: 200;
+    /*top: 100%;*/
+    left: 100%;
+    margin-left: -25px;
+    /*margin-top: -25px;*/
+    /*margin-left: 7.5%;*/
+    /*margin-top: -3px;*/
+    background: rgba(189,196,199,0.3);
+}
+.img_content .delete_btn .cancel_icon{
+    background: #d8d8d8;
+    color: #56a4ff;
+    width: 15%;
+    height: 25px;
+}
+.delete_btn image{
+    width: 25px;
+    height: 25px;
+    /*margin-left: -4px;
+    margin-top: -1px;*/
+
+}
+
+
+.content text{
+    display: block;
+    padding-top: 10px;
+    color: #9b9b9b;
+}
+.slide-up image{
+    motion-rotation:180deg;
+}
+.no_pic{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 20px 0; 
+    color: #9b9b9b;
+    text-align: center;
+
+}
+.label_detail,.sample_detail,.provider_detail,.remark_detail{
+    background: #fff;
+}
+.label_detail .content{
+  
+    padding-bottom: 10px;
+}
+.label_detail .content text{
+    padding: 5px 10px;
+    border: 1px solid #e5e5e5;
+    color: #a5a5a5;
+    background: #f5f5f5;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    height: 20px;
+    float: left;
+    margin-top: 10px;
+   
+}
+
+.label_detail .content text:not(:first-child){
+    margin-left: 10px;
+}
+
+.btn_group{
+    /*width: 95%;*/
+    position: fixed;
+    bottom: 0px;
+    padding: 0;
+    padding-top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+    background: #fff;
+    height:120rpx;
+    line-height: 120rpx;
+    border-top: none;
+    border-bottom: none;
+    
+}
+.btn_group view{
+  text-align: center;
+  box-sizing: border-box;
+}
+.btn_group .basket{
+  position: relative;
+  width: 26%;
+  line-height: 40rpx;
+  height:120rpx;
+
+  font-size: 20px;
+  display: inline-block;
+}
+.basket image{
+    position:relative;
+    top:20rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+.basket text{
+  position:relative;
+  top:20rpx;
+  display: block;
+  line-height: 40rpx;
+}
+.scanNext{
+    width: 37%;
+
+    background: #4d5aff;
+    color: #fff;
+    height: 120rpx;
+    line-height: 120rpx;
+    font-size: 20px;
+    display: inline-block;
+}
+.click_me{
+    width: 37%;
+    background: #56a4ff;
+    color: #fff;
+    height: 120rpx;
+    line-height: 120rpx;
+    font-size: 20px;
+    display: inline-block;
+}

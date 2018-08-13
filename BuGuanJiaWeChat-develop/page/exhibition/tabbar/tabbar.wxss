@@ -1,0 +1,60 @@
+page {
+  padding-bottom: 40px;
+}
+.flex-h{
+  display: flex;
+}
+
+.custom-tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 40rpx 6rpx 40rpx;
+  background: #fff;
+ 
+}
+
+.custom-tabbar-grid-2 .custom-tabbar-item {
+  width: 50%;
+}
+
+.custom-tabbar-grid-3 .custom-tabbar-item {
+  width: 33.3333%;
+}
+
+.custom-tabbar-grid-4 .custom-tabbar-item {
+  width: 25%;
+}
+
+.custom-tabbar-grid-5 .custom-tabbar-item {
+  width: 20%;
+}
+
+.custom-tabbar-item {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+/*.custom-tabbar-item-hover {
+  opacity: 0.8;
+}*/
+
+.custom-tabbar-item-ico {
+  display: block;
+  width: 60rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+.custom-tabbar-item-title {
+  display: block;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  color: white;
+  text-align: center;
+  color:#7A7E83;
+}
+
+

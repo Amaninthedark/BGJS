@@ -1,0 +1,8 @@
+<view class="page">
+    <view class="shadow" hidden="{{!maskHidden}}" bindtap="hiddenShadow"></view>
+    <view class="code" hidden="{{!maskHidden}}"> 
+        <canvas class="canvas"  bindtap="previewImg" canvas-id="mycanvas"/>
+        <!--<image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>-->
+        <text>扫描二维码分享样品\n 点击右上角分享将二维码发送给好友</text> 
+    </view>
+</view>

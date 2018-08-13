@@ -1,0 +1,41 @@
+<view class='bussiness'>
+   <!-- 搜索框 -->
+    <view class="top-search">
+        <view class="input-box">
+            <input placeholder="筛选" value="{{inputVal}}"  disabled="disabled" bindtap="bindKeyInput"></input>
+            <image class="search-icon" src="/image/search_icon.png"></image>
+        </view>
+    </view>
+  <view class='bussList'>
+    <view class='bussMes{{item.status}}' wx:for="{{bussMes}}" wx:key="key" bindtap='toDetail' data-index='{{index}}'>
+      <view class='buss-top'>
+        <view class='buss-top-contact'>联系人：{{item.contactUserName}}(tel:{{item.mobile}})</view>
+        <view class='buss-top-type{{item.status}}'>{{status[item.status]}}</view>
+      </view>
+      <view class='buss-time'>{{item.bizOppTime}}</view>
+      <view class='buss-abstract'>
+        <view class='abstract-title'>商机摘要：</view>
+        <view class='abstract-text'>{{item.bizOppContent}}</view>
+      </view>
+      <view class='buss-img'>
+        <image src='{{itemy.bizOppPicKey}}' wx:for="{{item.bizOppPics}}" wx:for-item="itemy" wx:key="{{key}}" data-bizoppId="{{item.bizOppId}}" data-img="{{itemy}}" data-index='{{index}}' catchtap='imgYu'></image>
+      </view>
+      <view class='buss-founder'>创建人：{{item.creatorName}}</view>
+    </view>
+
+  </view>
+
+  <!--</scroll-view>-->
+   <view class="loading-view">
+      <loading hidden="{{!hidden}}" bindchange="loadingChange">
+         加载中...
+      </loading>
+   </view>
+   
+   <!-- 没有商机  -->
+ 
+  <view class="empty-buss-view" wx:if="{{bussMes.length=='0'}}">
+    <image src="/image/sad.png" mode="aspectFit"></image>
+    <view>暂无相关商机</view>
+  </view>
+</view>

@@ -1,0 +1,53 @@
+<view class="page"> 
+  
+    <view class="banner">
+        <image  class="banner_img" mode="widthFix" src="http://image.buguanjia.com/samplepic/7161/1521186990793.png"/>
+    </view>
+
+    <view class="weui-cells cell_contact">
+        <view class="weui-cell weui-cell_access">
+            <text>联系销售，了解详情</text>
+        </view>
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="call_c_1">
+            <image class="info_icon" src="/image/guide_c_1.png"/>
+            <text class="info-text-one">葛先生</text><text class="info-text-two">18106866076</text>
+            <image class="info_icon phone-icon" src="/image/guide_t_1.png"/>
+        </view>
+        <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="call_c_2">
+            <image class="info_icon" src="/image/guide_c_2.png"/>
+            <text class="info-text-one">孙先生</text><text class="info-text-two">18106865661</text>
+            <image class="info_icon phone-icon" src="/image/guide_t_2.png"/>
+        </view>
+         <!-- <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="call_c_3">
+            <image class="info_icon" src="/image/guide_c_5.png"/>
+            <text class="info-text-one">林先生</text><text class="info-text-two">18106885131</text>
+            <image class="info_icon phone-icon" src="/image/guide_t_3.png"/>
+        </view> -->
+        <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <image class="info_icon" src="/image/guide_c_4.png"/>
+            <text class="info-text-one">更多功能请访问布管家网站<text class="domain_name">www.buguanjia.com</text></text>
+        </view>
+        <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active" style="height: 120rpx; line-height:40rpx; font-size: 24rpx;">
+            <image class="info_icon" src="/image/guide_c_3.png"/>
+            <text class="info-text-one">浙江省绍兴市柯桥区金柯桥大道1255号财富大厦11楼</text>
+        </view>
+    </view>  
+
+    <view class="weui-cells cell_contact">
+        <view class="weui-cell weui-cell_access">
+            <text>商务合作</text>
+        </view>
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="call_c_3">
+            <image class="info_icon" src="/image/tab_center_blue.png"/>
+            <text class="info-text-one">陈先生</text><text class="info-text-two">18072295688</text>
+            <image class="info_icon phone-icon" src="/image/guide_t_1.png"/>
+        </view>
+    </view>
+    <view class="fixed-share"> <button open-type="share">分享</button> </view>
+     <!-- <navigator url="../../company/add/add" class="cell-btn" >
+        <button class="btn-creat" type="warn" size="default"> 
+            <image class="info_icon icon_spe" src="/image/invalid_name.png"/>
+            点我创建在线样品间 
+        </button>
+    </navigator>  -->
+</view>

@@ -1,0 +1,58 @@
+<view class="container">
+    <!--样品图片-->
+    <view class="panel img_detail">
+        <view class="public_img">
+            <view class="title">
+                <view class="text">名片展示</view>           
+                <view class="slide" id="slidePublic">
+                    <image wx:if="{{showPublic==false}}" src="/image/more.png"/>
+                    <image wx:else src="/image/slide-down.png"/>
+                </view>
+                
+            </view>
+            <view class="content img_content">
+               <view class="ul">
+                <view class="li" wx:if="{{contact.cardFront}}">
+                    <image src="{{contact.cardFront}}?x-oss-process=image/resize,m_fill,h_120,w137" data-src="{{contact.cardFront}}" bindtap="previewPic"/>
+                </view>
+                <view class="li" wx:if="{{contact.cardEnd}}">
+                    <image src="{{contact.cardEnd}}?x-oss-process=image/resize,m_fill,h_120,w137"  data-src="{{contact.cardEnd}}" bindtap="previewPic"/>
+                </view>
+                 <view class="no_pic" wx:if="{{contact.cardFront==''&&contact.cardEnd==''}}">暂无图片</view>
+                </view>
+               
+                     
+               </view>
+            
+        </view>
+    
+    </view>
+    <!--样品图片-->
+
+    <!--基本信息-->
+    <view class="panel sample_detail">
+        <view class="title">
+            <view class="text">名片信息</view> 
+        </view>
+        <view class="content">
+            <text>姓名：{{contact.name}}</text>
+            <text>手机：{{contact.mobile}}</text>
+            <text>联系电话：{{contact.telephone}}</text>
+            <text>邮箱：{{contact.email}}</text>
+            <text>公司名：{{contact.companyName}}</text>
+            <text>职位：{{contact.position}}</text>
+            <text wx:if="{{contact.gender==0}}">性别：男</text> 
+            <text wx:if="{{contact.gender==0}}">性别：女</text>
+            <text>地址：{{contact.address}}</text>
+            <text>备注：{{contact.remark}}</text>
+           
+            
+        </view>   
+    </view>
+    <!--基本信息-->
+
+ 
+
+
+
+</view>

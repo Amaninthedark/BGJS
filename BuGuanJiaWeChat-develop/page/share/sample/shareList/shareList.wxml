@@ -1,0 +1,120 @@
+<view class="weui-search-bar search-sample" wx:if="{{!ifShare}}">
+   
+   <navigator url="/page/share/sample/shareAdd/shareAdd" class="weui-search-bar__form">
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+          <view class="scan" catchtap="scanCode">
+              <image src="/image/scan.png" />
+          </view>
+        </label>
+   </navigator>
+   <view class="editor" wx:if="{{samples.length > 0}}">
+      <text wx:if="{{!isEditor}}" bindtap="toEditor">编辑</text>
+      <text wx:else bindtap="finishEditor">完成</text>
+   </view>
+</view>
+
+
+<view class="page sample_list_page" wx:if="{{!ifShare}}">
+   <view class="empty" hidden="{{!isEmpty}}">
+
+      <view class="empty_img">
+         <image src="/image/empty.png"></image> 
+      </view>
+      <view class="empty_text">您的样品篮是空的</view>
+      <button type="warn" catchtap="toAdd">去添加</button>
+   </view>
+   <view class="sample_list">
+      <view class="sample_item" wx:for="{{samples}}" wx:key="{{index}}" id="{{item.sampleId}}" bindtap="sampleAction">
+         <view class="nochoose choose" data-id="{{item.sampleId}}" catchtap="chooseOrCancel" hidden="{{!isEditor}}">
+            <image wx:if="{{item.chooseType==0}}" data-id="{{item.sampleId}}" src="/image/none_choose.png" />
+            <image wx:else src="/image/choosed.png" data-id="{{item.sampleId}}" />
+         </view>
+         <view class="sample" style="{{isEditor ? 'margin-left:10%;' : ''}}">
+            <view class="sample_img">
+
+               <image class="image choose_image" wx:if="{{item.samplePicKey.length>0}}" src="{{item.samplePicKey}}?x-oss-process=image/resize,m_fill,h_150,w_144" mode="aspectFill" />
+               <view wx:else class="choose_image">
+                  <image class="image" src="/image/default_sample.png" />
+                  <!-- <text class="no_pic_tip">该图由布管家提供</text> -->
+               </view>
+            </view>
+            <view class="sample_content">
+                     <block wx:if="{{ishuahai}}">
+
+                  <block wx:for="{{item.sampleAttributes}}" wx:key="{{index}}" wx:for-item="j"> 
+                    <block wx:if="{{index<4}}">
+                     <text>{{j.value}}</text>
+                    </block>
+                     <block wx:else> 
+                  </block>
+                  </block> 
+                 
+                </block>
+                <block wx:else> 
+               <view>{{item.attributes[1]}}</view>
+               <view>{{item.attributes[2] || ''}}</view>
+               <view>{{item.attributes[3] || ''}}</view>
+               <view wx:if="{{item.attributes[4] && item.attributes[5]}}">{{item.attributes[4]}}/{{item.attributes[5]}}</view>
+               <view wx:else>{{item.attributes[4] || '' }}{{item.attributes[5] || ''}}</view>
+                </block>
+            </view>
+         </view>
+
+      </view>
+
+   </view>
+
+
+</view>
+<view class="btn_group" hidden="{{isEmpty||ifShare}}">
+   <button class="share_btn" open-type="share" hidden="{{shadow}}"><image class="share_img" src="/image/myShare.png"/></button>
+   <view class="btn_left" bindtap="allShare" hidden="{{!isEditor}}">
+      <radio checked="{{chooseAll}}">全选</radio>
+   </view>
+   <view class="btn_right">
+      <button wx:if="{{!isEditor&sample_public}}" type="default" class="open-to-exhibition" bindtap="handlePublic">
+            <text>公开到展厅</text>
+      </button>
+      <button wx:if="{{!isEditor&sample_share}}" type="default" disabled="{{!shareKey}}" loading="{{!shareKey}}"  open-type="share">
+            <text>去分享</text>
+       </button>
+
+      <button wx:if="{{isEditor}}" type="warn" catchtap="toDelete">
+            <text>移除</text>
+       </button>
+   </view>
+</view>
+<!---------------------------------------------------------------------------------------------------------------------------------  -->
+<view class="page sample_list_page" wx:if="{{ifShare}}" >
+   <view class="sample_list" style="margin-top:0;background-color:#f5f5f5;">
+      <view class="share-sample_item" wx:for="{{samples}}" wx:key="{{index}}" data-key="{{item.detailKey}}" bindtap="handleGoShareDetail">
+         <view class="share-sample">
+            <view class="share-sample_img">
+
+               <image class="share-image choose_image" wx:if="{{item.samplePicKey.length>0}}" src="{{item.samplePicKey}}" mode="aspectFill" />
+               <view wx:else class="choose_image">
+                  <image class="share-image" src="/image/default_sample.png" />
+                  <!-- <text class="no_pic_tip">该图由布管家提供</text> -->
+               </view>
+            </view>
+            <view class="share-sample_content">
+               <text>{{item.attributes[1]}}</text>
+               <text>{{item.attributes[2] || ''}}</text>
+               <text>{{item.attributes[3] || ''}}</text>
+               <text wx:if="{{item.attributes[4] && item.attributes[5]}}">{{item.attributes[4]}}/{{item.attributes[5]}}</text>
+               <text wx:else>{{item.attributes[4] || '' }}{{item.attributes[5] || ''}}</text>
+            </view>
+         </view>
+
+      </view>
+
+   </view>
+
+
+</view>
+<view class="btn_group" wx:if="{{ifShare}}">
+       <button class="click_me" bindtap="toHome">
+      <image src="/image/click.png"/><text>点我免费创建在线样品间</text></button>
+</view>

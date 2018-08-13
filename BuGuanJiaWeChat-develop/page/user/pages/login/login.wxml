@@ -1,0 +1,23 @@
+<view class="page"> 
+   <view class="title">
+        <text>手机号登录</text>
+   </view>
+   <view class="form">
+    <form bindsubmit="formSubmit">
+        <view class="input">
+            <icon><image src="/image/username.png"/></icon>
+            
+            <input type="text" class="user_phone" name="mobile" placeholder="请输入手机号" value="{{mobile}}" bindinput="confirmMobile"/>
+            <!--<icon id="icon_cancel" class="icon_cancel icon_tip" type="cancel" size="20" color="#9b9b9b" wx:if="{{mobile.length>0&&mobile.length!=11}}"></icon>
+            <icon id="icon_success" class="icon_success icon_tip" type="success_circle" size="20" color="#56a4ff" wx:if="{{mobile.length==11}}"></icon>-->
+        </view>
+          <view class="input">
+            <icon><image src="/image/password.png"/></icon>
+            <input password type="text" class="user_password" name="password" placeholder="请输入密码" value="{{password}}" bindinput="confirmPassword"/>
+        </view>
+    </form>
+   </view>
+   <view class="btn">
+    <button class="login_btn" loading="{{loading}}" form-type="submit" bindtap="login">登录</button>
+   </view>
+</view>

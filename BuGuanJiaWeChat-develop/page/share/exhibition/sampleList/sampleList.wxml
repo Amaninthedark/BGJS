@@ -1,0 +1,30 @@
+<view class="page sample_list_page"> 
+    
+         <view wx:if="{{samples.length==0}}" class="no_sample_list">分享内容为空</view>
+        <view class="sample_list">   
+        <view class="sample_item" wx:for="{{samples}}" wx:key="{{index}}" id="{{item.sampleId}}">
+            <view class="sample">
+                <view class="sample_img"> 
+                    <image class="image" wx:if="{{item.samplePicFront!=''}}" src="{{item.samplePicFront}}?x-oss-process=image/resize,m_fill,h_150,w_144"/> 
+                    <view wx:else>
+                        <image class="image" src="/image/default_sample.png"/>
+                    </view>
+                </view>
+                <view class="sample_content">
+                    <text>{{item.itemNo}}</text>
+                    <text>{{item.remark}}</text>
+               
+                </view>
+            </view>
+           
+         </view> 
+        </view>
+    <view class="loading-view">
+    <loading hidden="{{!hidden}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+  </view>
+ 
+    
+  
+</view>

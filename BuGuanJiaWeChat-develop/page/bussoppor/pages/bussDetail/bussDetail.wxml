@@ -1,0 +1,43 @@
+<view class='bussinessDetail'>
+
+
+  <view class='bussList'>
+    <view class='bussMes{{bussDetail.status}}'>
+      <view class='buss-top'>
+        <view class='buss-top-contact'>联系人：{{bussDetail.contactUserName}}</view>
+        <view class='buss-top-type{{bussDetail.status}}'>{{status[bussDetail.status]}}</view>
+      </view>
+      <view class='buss-time'>{{bussDetail.bizOppTime}}</view>
+      <view class='buss-abstract'>
+        <view class='abstract-title'>商机摘要：</view>
+        <view class='abstract-text'>{{bussDetail.bizOppContent}}</view>
+      </view>
+      <view class='buss-img'>
+        <image src='{{itemy.bizOppPicKey}}' wx:for="{{bussDetail.bizOppPics}}" wx:for-item="itemy" wx:key="{{key}}" data-bizoppId="{{bussDetail.bizOppId}}" data-img="{{itemy}}" data-index='{{index}}' catchtap='imgYu'></image>
+      </view>
+      <view class='buss-founder'>创建人：{{bussDetail.creatorName}}</view>
+    </view>
+  </view>
+
+  <view class='buss_record'>
+    <view class='record_top'>
+      <view class='record_title'>共{{bussDetail.dynamic.length}}条记录</view>
+    </view>
+    <view class='record-list'>
+      <view class='record-mes' wx:for="{{bussDetail.dynamic}}" wx:key="key">
+        <view class='record-time'>
+          <view class='record-year'>{{item.year}}</view>
+          <view class='record-mon-day'>{{item.moday}}</view>
+        </view>
+        <view class='record-xian'>
+          <view class='record-circular{{item.bizType}}'></view>
+          <view class='record-line'></view>
+        </view>
+        <view class='record-content'>
+          <view class='record-record'>{{item.userName}}添加了一条{{record[item.bizType]}}信息</view>
+          <view class='record-record-detail'>样品：{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

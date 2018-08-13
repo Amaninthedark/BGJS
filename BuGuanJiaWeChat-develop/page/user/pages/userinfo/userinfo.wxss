@@ -1,0 +1,20 @@
+@import "../../../common/index.wxss";
+.ul{
+    background: #fff;
+    padding: 0 0 0 20px;
+    margin-top: 20px;
+}
+.ul .li{
+    display: flex;
+    font-size: 0.876rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+    color: #4a4a4a;
+}
+.ul .li text{
+    color: #999;
+  
+}
+.ul .li view{
+    width: 75px;
+}

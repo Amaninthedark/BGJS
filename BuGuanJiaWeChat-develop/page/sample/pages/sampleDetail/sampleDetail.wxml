@@ -1,0 +1,409 @@
+<import src="/page/common/guide.wxml" />
+<view hidden="{{!edit_page}}" bindtap="hiddenAction">
+   <view class="swiper-tab">
+      <view class="swiper-tab-box" animation="{{animationData}}" bindtouchend="handleTouchEnd" bindtouchstart="handleTouchStart">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">样品信息</view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">备注信息</view>
+         <view wx:if="{{huahai_tab}}" class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">附件列表</view>
+        <view wx:if="{{sample_biz}}" class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">报价记录</view>
+        <view wx:if="{{sample_biz}}" class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">寄样记录</view>
+      </view>
+   </view>
+   
+
+    <!-- <view class="top-tab flex-wrp flex-tab" hidden="true">
+      <view class="toptab flex-item {{currentTab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:key="{{index}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+         {{itemName}}
+      </view>
+   </view>  -->
+
+   <view class="ctnt">
+      <view class="ctnt0" hidden="{{currentTab==0 ? '' : true}}">
+         <view class="unread">
+            <!--基本信息-->
+            <view class="panel sample_detail">
+               <view class="title">
+                  <view class="text">样品信息</view>
+               </view>
+               <view class="content">
+                  <text wx:for="{{sample.attributes}}" wx:if="{{item.value}}" wx:key="{{index}}">{{item.prettyName}}：{{item.value}} </text>
+
+               </view>
+            </view>
+            <!--基本信息-->
+            <!--样品图片-->
+            <view class="img_detail">
+               <view class="panel public_img watcher">
+                  <view class="title">
+                     <view class="text">公共图片</view>
+                     <!--<view class="slide" id="slidePublic" bindtap="changePublicSlide">
+                    <image wx:if="{{showPublic==false}}" src="/image/more.png"/>
+                    <image wx:else src="/image/slide-down.png"/>
+                </view>-->
+
+                  </view>
+                  <view class="content img_content">
+                     <view class="ul">
+                        <view class="li" bindtap="choosePublicImage" wx:if="{{sample_add_update}}">
+                           <view class="choose_box">
+
+                              <image class="choose_img" src="/image/choose.png" />
+                           </view>
+                        </view>
+                        <!--sample-->
+                        <!--<view class="shadow" hidden="{{!showContent}}" bindtap="hiddenContent"></view>
+                     <view class="li">
+                     <view class="img">
+                      <view class="delete_btn"  data-num="{{index}}"  data-index="0" catchtap="toDeleteImage">
+                       <image src="/image/delete_image.png"/>
+                     </view> 
+                   
+                       <image class="sample_img" src="/image/default_sample.png"/>
+                       
+                    </view>
+                    
+                    <view class="area" hidden="{{!showContent}}">
+                        <view class="dot_item dot_top"></view>
+                        <view class="edit_content">
+                        <view class="edit_company action">移至内部</view>
+                         <view class="edit_company action">移至私有</view>
+                        <view class="delete_company action">删除</view>
+                        </view>
+                    </view>
+                  
+                     
+                    </view>-->
+                        <!--sample-->
+                        <view class="li" wx:for="{{upload_pics[0].littleImage}}" wx:key="{{index}}" data-num="{{index}}" data-index="0" bindtap="previewPic">
+                           <view class="img">
+                              <view class="more_btn" data-num="{{index}}" data-index="0" catchtap="showImgAction">
+                                 <image hidden="{{!sample_add_update}}" src="/image/img_more_action.png" />
+                              </view>
+                              <image class="sample_img" src="{{item}}" mode="aspectFill" />
+                           </view>
+                        </view>
+                        <!--<view class="no_pic" wx:if="{{publicPic==''}}">暂无图片</view>-->
+
+                     </view>
+                  </view>
+               </view>
+               <view wx:if="{{sample_inner}}" class="panel inner_img watcher">
+                  <view class="title">
+                     <view class="text">内部图片</view>
+                     <!--<view class="slide slide-up" id="slideInner" bindtap="changeInnerSlide">
+                    <image wx:if="{{showInner==false}}" src="/image/more.png"/>
+                    <image wx:else src="/image/slide-down.png"/>
+                </view>-->
+
+                  </view>
+                  <view class="content img_content">
+                     <view class="ul">
+                        <view class="li">
+                           <view class="choose_box" bindtap="chooseInnerImage" wx:if="{{sample_add_update}}">
+                              <image class="choose_img" src="/image/choose.png" />
+                           </view>
+                        </view>
+                        <view class="li" wx:for="{{upload_pics[1].littleImage}}" wx:key="{{index}}" data-num="{{index}}" data-index="1" bindtap="previewPic">
+                           <view class="img">
+                              <view class="more_btn" data-num="{{index}}" data-index="1" catchtap="showImgAction">
+                                 <image hidden="{{!sample_add_update}}" src="/image/img_more_action.png" />
+                              </view>
+                              <image class="sample_img" src="{{item}}" mode="aspectFill" />
+                           </view>
+                        </view>
+                        <!--<view class="more_btn"  data-num="{{index}}"  data-index="0" catchtap="toDeleteImage">
+                       <image src="/image/img_more_action.png"/>
+                    </view> -->
+                        <!--<view class="no_pic" wx:if="{{innerPic==''}}">暂无图片</view>-->
+                     </view>
+                  </view>
+               </view>
+               <view class="panel private_img watcher">
+                  <view class="title">
+                     <view class="text">私有图片</view>
+                     <!--<view class="slide slide-up" id="slidePrivate" bindtap="changePrivateSlide">
+                     <image wx:if="{{showPrivate==false}}" src="/image/more.png"/>
+                    <image wx:else src="/image/slide-down.png"/>
+                </view> -->
+
+                  </view>
+                  <view class="content img_content">
+                     <view class="ul">
+                        <view class="li">
+                           <view class="choose_box" bindtap="choosePrivateImage" wx:if="{{sample_add_update}}">
+                              <image class="choose_img" src="/image/choose.png" />
+                           </view>
+                        </view>
+                        <view class="li" wx:for="{{upload_pics[2].littleImage}}" wx:key="{{index}}" data-num="{{index}}" data-index="2" bindtap="previewPic">
+                           <view class="img">
+                              <view class="more_btn"  data-num="{{index}}" data-index="2" catchtap="showImgAction">
+                                 <image hidden="{{!sample_add_update}}" src="/image/img_more_action.png" />
+                              </view>
+                              <image class="sample_img" src="{{item}}" mode="aspectFill"/>
+                              <!--<image class="sample_img" src="{{item}}?x-oss-process=image/resize,m_fill,h_120,w137"/>-->
+                           </view>
+                        </view>
+                        <!--<view class="no_pic" wx:if="{{privatePic==''}}">暂无图片</view>-->
+                     </view>
+                  </view>
+               </view>
+            </view>
+            <!--样品图片-->
+
+            <!--自定义标记-->
+            <view class="panel label_detail">
+               <view class="title">
+                  <view class="text">自定义标记</view>
+               </view>
+               <view class="content">
+                  <text wx:for="{{sample.tags}}" wx:key="{{index}}">{{item.tagName}}</text>
+                  <view wx:if="{{sample.tags.length!=0&&sample.tags}}"></view>
+                  <view wx:else class="no_content">暂无自定义标记</view>
+
+               </view>
+            </view>
+            <!--自定义标记-->
+            <!--<view class="mb30"></view>-->
+            <view class="save">
+               <button class="delete_sample" loading="{{loadingDelete}}" type="default" bindtap="toDeleteSample" hidden="{{!sample_delete}}">删除样品</button>
+
+            </view>
+
+
+
+         </view>
+         <!--<view class="tabbar">
+        <view bindtap="toEdit"><image src="/image/edit.png"/></view>
+  
+  </view>-->
+      </view>
+      <!-- cnt1 -->
+      <view class="ctnt1 mb50" hidden="{{currentTab==1 ? '' : true}}" bindtouchmove="hiddenAction">
+         <view class="unread">
+            <!--备注信息-->
+            <view class="panel remark_detail" bindtap="hiddenAction">
+               <view class="title">
+                  <view class="text">添加备注</view>
+
+               </view>
+               <view class="content demo_content">
+                  <input class="demo_input add_demo" placeholder="{{placeholder}}" type="text" placeholder-class="placeholder_demo" value="{{demo}}" bindblur="demoBind" />
+                  <view class="add_demo_btn">
+                     <button class="add_private add_btn" loading="{{loadingPrivate}}" type="default" bindtap="addPrivateRemark">保存私有</button>
+                     <button class="add_public add_btn" loading="{{loadingPublic}}" type="default" bindtap="addPublicRemark">保存公有</button>
+                     <button class="cancel add_btn" type="default" bindtap="clearInput">取消</button>
+                  </view>
+
+               </view>
+
+
+            </view>
+            <view class="panel remark_detail" bindtap="hiddenAction">
+               <view class="title">
+                  <view class="text">备注信息</view>
+                  <!--<view class="slide" bindtap="changePublicDemo">
+                    <image wx:if="{{showPublicDemo==false}}" src="/image/more.png"/>
+                    <image wx:else src="/image/slide-down.png"/>
+                </view>-->
+
+               </view>
+               <view class="content demo_content">
+                  <!--<input class="demo_input add_demo" placeholder="添加新备注" type="text" placeholder-class="placeholder_demo" value="{{publicDemo}}" bindconfirm="addPublicRemark"/>-->
+                  <view class="demo_list ul">
+                     <view wx:if="{{remarks.length==0}}" class="no_content"> 暂无备注</view>
+                     <view class="li" wx:for="{{remarks}}" wx:key="{{index}}">
+                        <view class="text">
+                           <image class="type" wx:if="{{item.isOpen==1}}" src="/image/public.png" data-index="{{item.remarkId}}" catchtap="moveToPrivateRemark" />
+                           <image class="type" wx:if="{{item.isOpen==0}}" src="/image/private.png" data-index="{{item.remarkId}}" catchtap="moveToPublicRemark" />
+                           <text class="name">{{item.userName}}：</text>
+
+                        </view>
+                        <view class="content" data-index="{{item.remarkId}}" catchtap="showAction">
+                           <text class="demo_content">{{item.content}}</text>
+                        </view>
+                        <!--<view class="edit"  wx:if="{{item.isOpen==1}}">
+                            
+                             <view class="action" data-index="{{item.remarkId}}" catchtap="showAction">
+                             <image class="more_action" src="/image/more_action.png"/>
+                             </view>
+                             <view class="area" hidden="{{!item.showAction}}" >
+                                <view class="dot_item dot_top"></view>
+                                <view class="edit_content">
+                            
+                                <view class="edit_company action" catchtap="moveToPrivateRemark">移至私有</view>
+                                <view class="delete_company action" catchtap="deleteRemark">删除</view>
+                                </view>
+                            </view>
+                        </view>-->
+                        <view class="edit">
+
+                           <view class="action" data-index="{{item.remarkId}}" catchtap="showAction">
+                              <image class="more_action" src="/image/more_action.png" />
+                           </view>
+                           <view class="area" hidden="{{!item.showAction}}">
+                              <view class="dot_item dot_top"></view>
+                              <view class="edit_content">
+
+                                 <view class="edit_company action" data-index="{{index}}" catchtap="toEditRemark">修改</view>
+                                 <view class="delete_company action" data-index="{{index}}" catchtap="deleteRemark">删除</view>
+                              </view>
+                           </view>
+                        </view>
+
+
+                     </view>
+
+                  </view>
+               </view>
+
+
+            </view>
+            <modal hidden="{{!showEditRemark}}" title="修改备注" confirm-text="确定" confirm-color="#56a4ff" cancel-text="取消" bindcancel="cancelEditRemark" bindconfirm="editRemark">
+               <input placeholder="{{placeholderEdit}}" value="{{edit_remark}}" class="input_add" bindblur="remarkBind" class="mb40" />
+            </modal>
+         </view>
+      </view>
+      
+      <view class="ctnt2" hidden="{{currentTab==2 ? '' : true}}">
+        <view wx:for="{{priceRecord}}" wx:key="{{index}}" class="record-item">
+          <view class="record-head">
+            <text class="man">联系人: {{item.contactUserName}}</text>
+            <text class="time">{{item.createTime}}</text>
+          </view>
+          <view class="record-main">
+              {{item.recordDetail.sampleItemNo}}({{item.recordDetail.samplePrice}})      
+          </view>
+          <view class="record-footer">报价人：{{item.quoterName}}</view>
+        </view>
+        <view wx:if="{{priceRecord.length === 0}}" class="norecord">
+          暂无相关记录
+        </view>
+      </view>
+      <view class="ctnt3" hidden="{{currentTab==3 ? '' : true}}">
+        <view wx:for="{{sendRecord}}" wx:key="{{index}}" class="record-item">
+          <view class="record-head">
+            <text class="man">联系人: {{item.receiverName}}</text>
+            <text class="time">{{item.createTime}}</text>
+          </view>
+          <view class="record-main">
+              {{item.recordDetail.sampleItemNo}}({{item.recordDetail.sampleNumber}})      
+          </view>
+          <view class="record-footer">寄样人：{{item.senderName}}</view>
+        </view>
+        <view wx:if="{{sendRecord.length === 0}}" class="norecord">
+          暂无相关记录
+        </view>
+      </view>
+       <view class="ctnt1" hidden="{{currentTab==4 ? '' : true}}" style='padding-bottom:100rpx;'>
+       <view wx:for="{{docsRecord}}" wx:key="{{index}}"  class="record-item">
+          <view class="record-head">
+            <text class="man">附件名称：{{item.originName}}</text>
+            <text class="time">上传时间:{{item.createTime}}</text>
+          </view>
+          <view class="record-main">
+              上传人员：{{item.userName}}    
+          </view>
+          <view class="record-footer" style='position:relative;min-height:88rpx;z-index:999;'>
+            <button  bindtap="downDos" size='mini' class='huahai_class' data-dockey="{{item.docKey}}">查看</button>
+          </view>
+         
+        </view>
+         <view wx:if="{{docsRecord.length === 0}}" class="norecord">
+          暂无相关记录
+        </view>
+        <!-- <view wx:for="{{docsRecord}}" wx:key="{{index}}" class="record-item">
+          <view class="record-head">
+            <text class="man">联系人: {{item.receiverName}}</text>
+            <text class="time">{{item.createTime}}</text>
+          </view>
+          <view class="record-main">
+              {{item.recordDetail.sampleItemNo}}({{item.recordDetail.sampleNumber}})      
+          </view>
+          <view class="record-footer">寄样人：{{item.senderName}}</view>
+        </view>
+        <view wx:if="{{sendRecord.length === 0}}" class="norecord">
+          暂无相关记录
+        </view> -->
+      </view>
+   </view>
+   <!--<view class="shadow" hidden="{{!maskHidden}}" bindtap="hiddenShadow"></view>
+<view class="code" hidden="{{!maskHidden}}"> 
+  <canvas class="canvas"  bindtap="previewImg" canvas-id="mycanvas"/>
+  <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+  <text>微信扫描二维码分享\n 点击进入大图可将二维码分享给好友</text> 
+</view>-->
+   <!--<view class="img-box">
+    <canvas hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+    <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+</view>-->
+   <!--<view class="mb35"></view>-->
+   <action-sheet hidden="{{!showActionsSheet[0]}}" bindchange="hideActionSheet">
+      <action-sheet-item wx:if="{{sample_inner}}" bindtap="moveToInnerImg">移至内部</action-sheet-item>
+      <action-sheet-item bindtap="moveToPrivateImg">移至私有</action-sheet-item>
+      <action-sheet-item class="warn" bindtap="toDeleteImage">删除图片</action-sheet-item>
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+   </action-sheet>
+   <action-sheet hidden="{{!showActionsSheet[1]}}" bindchange="hideActionSheet">
+      <action-sheet-item bindtap="moveToPublicImg">移至公有</action-sheet-item>
+      <action-sheet-item bindtap="moveToPrivateImg">移至私有</action-sheet-item>
+      <action-sheet-item class="warn" bindtap="toDeleteImage">删除图片</action-sheet-item>
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+   </action-sheet>
+   <action-sheet hidden="{{!showActionsSheet[2]}}" bindchange="hideActionSheet">
+      <action-sheet-item bindtap="moveToPublicImg">移至公有</action-sheet-item>
+      <action-sheet-item wx:if="{{sample_inner}}" bindtap="moveToInnerImg">移至内部</action-sheet-item>
+      <action-sheet-item class="warn" bindtap="toDeleteImage">删除图片</action-sheet-item>
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+   </action-sheet>
+   
+   <view class="side_btn">
+
+    <view bindtap="handleGoBasket">
+      <image src="/image/side_basket.png" />
+      <text wx:if="{{selectArr.length}}" class="select-count">{{selectArr.length}}</text>
+    </view>
+    <!-- <view bindtap="handleSelectIO">
+      <image src="/image/side_change.png" />
+    </view> -->
+   </view>
+   <view class="btn_group flex-box">
+      <view class="btn flex-1 share-btn" wx:if="{{sample_share}}">
+         <button class="share_btn" open-type="share" disabled="{{!shareKey}}" loading="{{!shareKey}}">分享样品</button>
+      </view>
+      <view class="btn flex-1 edit-btn" wx:if="{{sample_add_update}}" bindtap="toEdit">
+         编辑样品
+      </view>
+      <view class="btn flex-1 basket-btn" wx:if="{{isSelected}}" >
+         已加入样品篮
+      </view>
+      <view class="btn flex-1 basket-btn" wx:else bindtap="handleAddBasket" >
+         加入样品篮
+      </view>
+      
+   </view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="height:{{winHeight - 31}}px" bindtap="hiddenAction">
+
+
+   <swiper-item>
+      <view class="gg">基本信息</view>
+   </swiper-item>
+
+   <swiper-item >
+      <view>备注信息</view>
+   </swiper-item>
+
+    <swiper-item wx:if="{{sample_biz}}">
+      <view>报价记录</view>
+   </swiper-item>
+
+   <swiper-item wx:if="{{sample_biz}}">
+      <view>寄样记录</view>
+   </swiper-item>
+</swiper>
+<view class="shadow" hidden="{{!shadow}}" bindtap="hideShadow"></view>
+<view class="tip" hidden="{{!shadow}}" bindtap="hideShadow">
+   <image class="toshare" src="/image/jiantou.png" />
+   <text>转发可将样品分享给你的好友</text>
+   <image class="iknow" src="/image/iknow.png" />
+</view>

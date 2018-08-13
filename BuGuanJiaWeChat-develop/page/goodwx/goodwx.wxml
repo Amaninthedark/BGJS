@@ -1,0 +1,9 @@
+<!--pages/ad/goodwx.wxml-->
+<video poster="http://image.buguanjia.com/samplepic/7161/1512546659354.png" src="http://buguanjia-video.oss-cn-hangzhou.aliyuncs.com/xiaochenxu.mp4"></video>
+<view bindtap="handleLookDemo">查看示例小程序 >></view>
+<image mode="widthFix" src="http://image.buguanjia.com/samplepic/7161/1512374475922.png"></image>
+<image mode="widthFix" src="http://image.buguanjia.com/samplepic/7161/1512374475897.png"></image>
+<image mode="widthFix" src="http://image.buguanjia.com/samplepic/7161/1512374475779.png"></image>
+<image mode="widthFix" src="http://image.buguanjia.com/samplepic/7161/1512374475946.png"></image>
+<image mode="widthFix" src="http://image.buguanjia.com/samplepic/14981/1530249942598.png" bindtap="handleMakeCall"></image>
+<view class="fixed-share"> <button open-type="share">分享</button> </view>

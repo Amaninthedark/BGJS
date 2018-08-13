@@ -1,0 +1,172 @@
+/* cardList.wxss */
+
+text, view, swiper, icon, button, checkbox-group, checkbox, input, label, picker,
+radio-group, radio, slider, switch, textarea, navigator, image, video, audio,
+map {
+  box-sizing: border-box;
+}
+
+.top-search {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  height: 100rpx;
+  background-color: #eeeef4;
+  vertical-align: middle;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+}
+
+.top-search .input-box {
+  position: relative;
+  flex: 6;
+}
+
+.top-search .input-box input {
+  padding: 0 70rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #fff;
+  font-size: 28rpx;
+  border-radius: 4rpx;
+  text-align: left;
+  margin-right: 10rpx;
+}
+
+.top-search .input-box .search-icon {
+  position: absolute;
+  top: 15rpx;
+  left: 22rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.scroll-con {
+  margin-top: 100rpx;
+  height: 1106rpx;
+}
+
+.card-az {
+  text-align: center;
+  font-size: 25rpx;
+}
+
+.item-title {
+  padding-left: 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #f5f5f5;
+  font-size: 28rpx;
+  color: #8e8e93;
+}
+
+.card-li {
+  position: relative;
+  padding: 25rpx 120rpx 25rpx 30rpx;
+  background-color: #fff;
+  height: 150rpx;
+  box-shadow: inset 0 -1px 0 0 #e5e5e5, inset 0 1px 0 0 #e5e5e5;
+}
+
+
+.card-li .info-box {
+  position: absolute;
+  top: 28rpx;
+  left: 30rpx;
+  display: inline-block;
+  width: 460rpx;
+  font-size: 28rpx;
+  line-height: 45rpx;
+  color: #797979;
+  vertical-align: baseline;
+}
+
+.info-box view {
+  font-size: 32rpx;
+  color: #4a4a4a;
+  line-height: 50rpx;
+  height: 50rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-box .big-name {
+  margin-right: 20rpx;
+  font-size: 32rpx;
+  color: #4a4a4a;
+}
+
+
+
+.side-az {
+  position: fixed;
+  top: 50rpx;
+  bottom: 0;
+  right: 0rpx;
+  text-align: center;
+  width: 50rpx;
+  background: #f5f5f5;
+}
+
+.side-az .scroll-btn-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-btn-group view {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-left: 15rpx;
+}
+
+.scroll-btn-group view text {
+  color: #555;
+  font-size: 24rpx;
+}
+
+.side-az image {
+  margin-left: 10rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.empty-view {
+  margin: 300rpx auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8d8d8d;
+}
+
+.empty-view image {
+  width: 120rpx;
+  height: 100rpx;
+}
+
+.empty-view button {
+  margin-top: 60rpx;
+  width: 400rpx;
+}
+
+.empty-view .view-one {
+  margin-top: 25rpx;
+}
+
+.empty-search-view {
+  position: relative;
+  top: -1100rpx;
+  margin: 300rpx auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8d8d8d;
+}
+
+.empty-search-view image {
+  width: 120rpx;
+  height: 100rpx;
+}

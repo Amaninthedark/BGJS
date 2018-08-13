@@ -1,0 +1,179 @@
+/* pages/user/card/card.wxss */
+
+page{
+  padding-bottom: 60px;
+}
+
+.card_basic{
+  margin: 40rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.white_wrap{
+  padding: 40rpx;
+  background-color: #fff;
+}
+
+.map_wrap{
+  margin-top: 20rpx;
+  padding: 40rpx;
+  background-color: #fff;
+}
+.card_icon_img{
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+  
+}
+
+.cell_content_wrap{
+  display: flex;
+  margin-bottom: 20rpx;
+  align-items: center;
+}
+.mobile_content_wrap{
+  margin: 20rpx 0 25rpx 0;
+}
+.address_wrap{
+  align-items:flex-start;
+}
+.edit_wrap{
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 1px solid #d9d9d9;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  color: #4a4a4a;
+  opacity: .8;
+}
+.special_item{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 26rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  border: none;
+  color:#4a4a4a;
+}
+.special_item::after,
+.special_item::before{
+  border: none;
+}
+.edit_wrap view{
+  position: relative;
+}
+.border-right::after,
+.border-left::before{
+  content: '';
+  position: absolute;
+  top: 30rpx;
+  width: 1px;
+  height: 40rpx;
+  display: inline-block;
+  background-color: #dcdcdc;
+}
+.border-right::after{
+  right: 0;
+}
+.border-left::before{
+  left: 0;
+}
+label{
+  display: block;
+}
+.card_name{
+  font-size: 36rpx;
+  color: #36353a;
+}
+.card_label{
+  color: #7F8FA4;
+  font-size: 28rpx;
+}
+.card_title{
+  padding-left:20rpx;
+}
+
+.card_text{
+  color: #4a4a4a;
+  padding-left:20rpx;
+  font-size: 28rpx;
+  flex: 1;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.isShare{
+  color: #20A0FF;
+}
+.card_email{
+  position: relative;
+}
+.card_img{
+  width: 116rpx;
+  height: 116rpx;
+  
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  border-radius: 8rpx;
+}
+.card_map{
+  width: 100%;
+}
+.card_mini_img{
+  width:60rpx;
+  height: 60rpx;
+  
+  position: absolute;
+  top: 300rpx;
+  right: 20rpx;
+}
+
+.card_company{
+  padding: 30rpx;
+  margin: 50rpx 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.company_label{
+  font-size: 40rpx;
+}
+.company_text{
+  font-size: 30rpx;
+}
+
+.company_imgs{
+  padding-top: 20rpx;
+}
+
+.company_img{
+  width: 100rpx;
+  height: 100rpx;
+  padding-right: 20rpx;
+}
+
+
+.card_btn{
+  position: fixed;
+  bottom: 20rpx;
+  display: flex;
+  width: 100%;
+}
+
+.edit_btn{
+  background-color: #fff;
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.share_btn{
+  color: #fff;
+  background-color: #20A0FF;
+  flex: 1;
+  margin: 0 20rpx;
+}

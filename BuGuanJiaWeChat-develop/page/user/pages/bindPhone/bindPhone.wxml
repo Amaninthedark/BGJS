@@ -1,0 +1,34 @@
+<view class="page"> 
+   <view class="title">
+        <text>绑定手机</text>
+   </view>
+   <view class="form">
+    <form bindsubmit="formSubmit">
+        <view class="input input_phone">
+            <icon><image src="/image/username.png"/></icon>
+            
+            <input type="number" class="user_phone" name="mobile" placeholder="请输入手机号" bindinput="confirmMobile" focus="{{mobileFocus}}"/>
+          
+            <icon wx:if="{{showMobileTip}}" id="icon_cancel" class="icon_cancel icon_tip" type="cancel" size="20" color="#f00"></icon>
+            
+        </view>
+         <view class="input input_code">
+            <icon><image src="/image/yanzm.png"/></icon>
+            <input type="text" class="user_code" name="code" placeholder="请输入验证码" value="{{code}}" bindinput="confirmCode" focus="{{codeFocus}}"/>
+            <button class="text" disabled="{{disabled}}" bindtap="getCode">{{code_message}}</button>
+        </view>
+          <view class="input input_password">
+            <icon><image src="/image/password.png"/></icon>
+            <input password type="text" class="user_password" name="password" placeholder="请输入密码" value="{{password}}" bindinput="confirmPassword" focus="{{passwordFocus}}"/>
+            <icon wx:if="{{showPasswordTip}}" id="icon_cancel" class="icon_cancel icon_tip" type="cancel" size="20" color="#f00"></icon>
+        </view>
+    </form>
+    <text class="bind_tip">第一次绑定手机号，我们将为您创建布管家账号</text>
+   </view>
+   
+    
+  
+   <view class="btn">
+    <button class="login_btn" loading="{{loading}}" form-type="submit" bindtap="bindPhone">绑定</button>
+   </view>
+</view>

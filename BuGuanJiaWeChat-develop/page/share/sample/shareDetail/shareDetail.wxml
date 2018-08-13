@@ -1,0 +1,45 @@
+
+<view>
+    <!--基本信息-->
+    <view class="panel sample_detail">
+        <view class="title">
+            <view class="text">基本信息</view> 
+        </view>
+        <view class="content">
+            <text wx:for="{{attribute}}" wx:key="{{index}}" wx:if="{{item.value}}">{{item.prettyName}}: {{item.value}}</text>
+        </view>   
+    </view>
+    <!--基本信息-->
+    <!--样品图片-->
+    <view class="panel img_detail">
+        <view class="public_img watcher">
+            <view class="title">
+                <view class="text">样品图片</view>           
+            </view>
+            <view class="content img_content">
+                <view class="ul">
+                  
+                    <view class="li" wx:for="{{pic}}" wx:key="{{index}}" data-num="{{index}}" data-index="0" bindtap="previewPic">
+                        <view class="img">
+                     
+                         <image class="share_sample_img" src="{{item.samplePicKey}}"/>
+                       </view>
+                    </view>
+                    <view class="no_pic" wx:if="{{pic.length==0}}">无样品图片</view>
+                     
+                </view>
+            </view>
+        </view>
+        <view class="blank" hidden="{{!sharePage}}"></view>
+       
+       
+    <!--样品图片-->
+    <view class="btn_home"  hidden="{{!sharePage}}">
+        <button class="click_me" bindtap="toHome">
+        <image src="/image/click.png"/><text>点我免费创建在线样品间</text></button>
+    </view>
+</view>  
+
+
+
+</view>

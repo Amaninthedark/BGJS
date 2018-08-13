@@ -1,0 +1,50 @@
+<view class='mailDetail'wx:for="{{contactMes}}" wx:key="key">
+  <view class='detail-top'>
+    <view class='detail-name'>{{item.contactUserName}}</view>
+    <view class='detail-logo'>
+      <image src='../../../../image/logo.png'></image>
+    </view>    
+  </view>
+  <view class='detail-mes' >
+    <view class='detail-company'>
+      <view class='detail-left'>所属公司</view>
+      <view class='detail-right detail-right-color'>{{item.contactCompanyName}}</view>
+    </view>
+    <view class='detail-star'>
+      <view class='detail-left'>星级评价</view>
+      <view  class='detail-right star'>
+        <view wx:for="{{starLevel}}" wx:key="key" class='iconfont icon-star'></view>
+      </view>
+    </view>
+    <view class='detail-phone'>
+      <view class='detail-left'>手机号</view>
+      <view class='detail-right detail-right-color' data-mobile="{{item.mobile}}" bindtap='handleMakeCall'>{{item.mobile}}</view>
+    </view>
+    <view class='detail-mailbox'>
+      <view class='detail-left'>邮箱</view>
+      <view class='detail-right'>{{item.email}}</view>
+    </view>
+    <view class='detail-fax'>
+      <view class='detail-left'>传真</view>
+      <view class='detail-right'>{{item.fax}}</view>
+    </view>
+    <view class='detail-address'>
+      <view class='detail-left'>地址</view>
+      <view class='detail-right'>{{item.address}}</view>
+    </view>
+    <view class='detail-addressDt'>
+      <view class='detail-left'>详细地址</view>
+      <view class='detail-right'>{{item.areaName}}</view>
+    </view>
+    <view class='detail-source'>
+      <view class='detail-left'>来源</view>
+      <view class='detail-right'>{{sourceType[item.sourceType]}}</view>
+    </view>
+    <view class='detail-card'>
+      <view class='detail-left left-card'>名片</view>
+      <view class='card-img'>
+        <image src='{{item.pic}}' wx:for="{{contactPic}}"  wx:key="key" data-index='{{index}}' data-src='{{item.pic}}' bindtap='imgYu' ></image>
+      </view>
+    </view>
+  </view>
+</view>

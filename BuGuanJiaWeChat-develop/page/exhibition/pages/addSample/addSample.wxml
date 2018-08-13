@@ -1,0 +1,78 @@
+<view class="page">
+
+      <view class="panel">
+        <view class="container">
+            <view class="title">
+                <text>标签上传</text>
+            
+            </view>
+            <view class="add_card">
+                <view class="card" bindtap="chooseLabelImage">
+                    <image wx:if="{{showLablePic!=''}}" class="card_image" src="{{showLablePic}}"/>
+                    <view wx:else class="none_card_image">
+                        <image src="/image/take_photo.png"/>
+                        <text>标签图片</text>
+                    </view>
+                </view>
+               
+            </view>
+        
+        </view>
+  
+    
+    </view>
+   <view class="panel">
+        <view class="container">
+            <view class="title">
+                <text>样品上传</text>
+            
+            </view>
+            <view class="add_card">
+                <view class="card" bindtap="chooseFrontImage">
+                    <image wx:if="{{showSamplePicFront!=''}}" class="card_image" src="{{showSamplePicFront}}"/>
+                    <view wx:else class="none_card_image">
+                        <image src="/image/take_photo.png"/>
+                        <text>样品正面</text>
+                    </view>
+                </view>
+                <view class="card"  bindtap="chooseBackImage">
+                    
+                       <image wx:if="{{showSamplePicBack!=''}}" class="card_image" src="{{showSamplePicBack}}"/>
+                    
+                        <view wx:else  class="none_card_image">
+                            <image src="/image/take_photo.png"/>
+                            <text>样品反面</text>
+                        </view>
+                 </view>
+            </view>
+        
+        </view>
+  
+    
+    </view>
+  
+     <view class="panel">
+    <view class="container">
+        <view class="name">
+        <text>编号</text>
+        <input placeholder="输入编号" value="{{itemNo}}" bindblur="itemNoBind" maxlength="10"/>
+        </view>
+        
+    </view>
+    
+  </view>
+    <view class="panel">
+        <view class="container">
+            <view class="name">
+                <text>备注</text>
+                <textarea  placeholder="输入备注信息..."  value="{{remark}}" bindblur="remarkBind" maxlength="30"/>
+            </view>
+        </view>
+    </view>
+    <view class="add_btn">
+        <button class="btn btn_back"  loading="{{loadingBack}}" type="default" bindtap="addSampleAndToList">完成采样</button>
+        <button class="btn btn_add"  loading="{{loadingContinue}}" type="default" bindtap="addSampleAndContinue">继续添加</button>
+        
+    </view>
+
+</view>

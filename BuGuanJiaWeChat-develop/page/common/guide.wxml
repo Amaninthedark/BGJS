@@ -1,0 +1,9 @@
+<template name="guide">  
+
+<view class="tip" hidden="{{!shadow}}"  bindtap="hideShadow">
+    <image class="toshare" src="/image/jiantou.png"/>
+    <text>转发可将样品分享给你的好友</text>   
+      <image class="iknow" src="/image/iknow.png"/>
+   
+</view>
+</template>

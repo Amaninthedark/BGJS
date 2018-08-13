@@ -1,0 +1,65 @@
+<view class="page sample_list_page">
+  
+    
+    <!--sampleList-->
+    <view wx:if="{{samples.length==0}}" class="no_sample_list">暂无分享</view>
+    <!--<scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper=" topLoad" bindscrolltolower="pullUpLoad" bindscroll="scroll">-->
+        <view class="sample_list">
+      
+        <view class="sample_item" wx:for="{{samples}}" wx:key="{{index}}" id="{{item.sampleId}}"  bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="sampleAction" >
+             <view class="{{chooseType}} choose"  data-id="{{item.sampleId}}"  catchtap="chooseOrCancel">
+                <image wx:if="{{item.chooseType==0}}" data-id="{{item.sampleId}}" src="/image/none_choose.png"/>
+                <image wx:else src="/image/choosed.png" data-id="{{item.sampleId}}"/>
+            </view> 
+              <!--<view class="choosed_btn"><image src="/image/none_choose.png"/></view> -->
+            <image class="sample_border" src="/image/border.png"/>
+           
+           
+             <!--<view class="choose_btn" hidden="{{ item.showChoose?'show':'hidden'}}"><image src="/image/none_choose.png"/></view> -->
+            <view class="sample">
+             
+                 
+                <view class="sample_img"> 
+                   
+                    <image class="image choose_image" wx:if="{{item.samplePicKey.length>0}}" src="{{item.samplePicKey}}"/> 
+                    <view wx:else class="choose_image">
+                        <image class="image" src="/image/default_sample.png"/>
+                    </view>
+                </view>
+                <view class="sample_content">
+                    <text>{{item.itemNo}}</text>
+                    <text>{{item.name}}</text>
+                    <text>{{item.component}}</text>
+                    <text wx:if="{{item.weight.length>0}}">{{item.width}}/{{item.weight}}</text>
+                    <!--<image catchtap="editSample" src="/image/edit.png"/>-->
+                </view>
+            </view>
+            <view class="viewers" data-id="{{item.sampleId}}" catchtap="toViewer">
+             <image wx:for="{{item.viewers}}" wx:key="{{index}}" wx:if="{{index<4}}" wx:for-item="viewer" src="{{viewer.avatar}}?x-oss-process=image/resize,m_fill,h_20,w_20"/>
+              
+         
+             <image  class="people_view" src="/image/more_views.png"/>
+            </view>
+            
+            <!--<image data-id="{{item.sampleId}}" catchtap="toRecord" class="edit_sample" src="/image/time.png"/>-->
+           
+         </view>
+
+      
+      
+        
+        
+        </view>
+        <view class="mb50"></view>
+         
+    <!--</scroll-view>-->
+     <view class="loading-view">
+    <loading hidden="{{!hidden}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+  </view>
+
+
+    
+
+</view>

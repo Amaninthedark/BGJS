@@ -1,0 +1,28 @@
+@import "../../../common/lib/weui.wxss";
+page{
+   background:#eef1f7;
+}
+.search-sample{
+  background-color: #eeeef4;
+  height: 100rpx;
+  border-bottom: none;
+}
+.weui-search-bar__label{
+  padding-left: 20rpx;
+  text-align: left;
+}
+.list-item{
+   border-bottom: 1rpx solid #d9d9d9;
+   padding: 30rpx;
+   background-color: #fff;
+}
+.list-item>image
+{
+   width: 50rpx;
+   height: 50rpx;
+   float: right;
+}
+weui-search-bar__input{
+    line-height: 60rpx;
+    height: 60rpx;
+}

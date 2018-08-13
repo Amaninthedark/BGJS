@@ -1,0 +1,39 @@
+<!--pages/user/card/card.wxml-->
+
+<view>
+
+   <view class="card_basic">
+    <view class="white_wrap">
+      <label class="card_name">{{userinfo.userName}}<text class="card_label card_title">{{userinfo.position}}</text></label>
+
+      <view class="cell_content_wrap mobile_content_wrap">
+         <image src="/image/card_tel.png" class="card_icon_img" mode="widthFix"></image>
+         <text class="card_text isShare" bindtap="handleCall">{{userinfo.mobile}}</text>
+      </view>
+
+      <view class="cell_content_wrap">
+         <image src="/image/card_name.png" class="card_icon_img" mode="widthFix"></image>
+         <text class="card_text">{{userinfo.companyName}}</text>
+      </view>
+
+      <view class="cell_content_wrap">
+         <image src="/image/card_qq.png" class="card_icon_img" mode="widthFix"></image>
+         <text class="card_text">{{userinfo.email}}</text>
+      </view>
+
+      <view class="cell_content_wrap address_wrap">
+         <image src="/image/card_address.png" class="card_icon_img" mode="widthFix"></image>
+         <text class="card_text">{{userinfo.address}}</text>
+      </view>
+
+      <image wx:if="{{userinfo.avatar}}" class="card_img" src="{{userinfo.avatar}}" mode="aspectFill"></image>
+    </view>    
+    <view class="map_wrap" wx:if="{{showmap == true}}">
+      <map class="card_map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"  bindtap="showdetailmap1" />
+    </view>
+   </view>
+   <view class="card_btn">
+
+    <button class="share_btn" bindtap="save_card" >保存名片</button>
+  </view>
+</view>

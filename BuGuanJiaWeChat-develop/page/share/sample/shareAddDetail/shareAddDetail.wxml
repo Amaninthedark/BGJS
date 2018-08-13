@@ -1,0 +1,41 @@
+
+<view class="page-wrap">
+    <!--基本信息-->
+    <view class="panel sample_detail">
+        <view class="title">
+            <view class="text">样品信息</view> 
+        </view>
+        <view class="content">
+            <text wx:for="{{sample.attributes}}" wx:if="{{item.value}}" wx:key="{{index}}">{{item.prettyName}}: {{item.value}}</text>
+        </view>   
+    </view>
+    <!--基本信息-->
+    <!--样品图片-->
+    <view class="panel img_detail">
+        <view class="public_img watcher">
+            <view class="title">
+                <view class="text">样品图片</view>           
+            </view>
+            <view class="content img_content">
+                <view class="ul">
+                  
+                    <view class="li" wx:for="{{pic}}" wx:key="{{index}}" data-num="{{index}}" data-index="0" bindtap="previewPic">
+                        <view class="img">
+                     
+                         <image class="share_sample_img" src="{{item.samplePicKey}}"/>
+                       </view>
+                    </view>
+                    <view class="no_pic" wx:if="{{pic.length==0}}">无样品图片</view>
+                     
+                </view>
+            </view>
+        </view> 
+        <view class="blank" hidden="{{!sharePage}}"></view>
+
+    </view>
+    <view class="empty-140box"></view>
+</view>
+<view class="btn_home" >
+    <button class="click_me" bindtap="sample_add">
+    <image src="/image/click.png"/><text>加入样品篮</text></button>
+</view>

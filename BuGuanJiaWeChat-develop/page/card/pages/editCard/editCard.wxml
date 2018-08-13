@@ -1,0 +1,147 @@
+<view class="page">
+  <view class="panel">
+     <view class="section">
+            <input type="text" value="{{name}}" placeholder="姓名" bindblur="nameBind"/>
+    </view>
+    <view class="section">
+            <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{genders}}" wx:key="{{index}}">
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+            </radio-group>
+    </view>
+      <view class="section">
+            <input type="text" value="{{mobile}}" placeholder="手机号"  bindblur="mobileBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{telephone}}" placeholder="联系电话" bindblur="telephoneBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{email}}" placeholder="邮箱" bindblur="emailBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{companyName}}" placeholder="公司名" bindblur="companyNameBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{position}}" placeholder="职位" bindblur="positionBind"/>
+    </view>
+     
+      <view class="section">
+            <input type="text" value="{{address}}" placeholder="地址" bindblur="addressBind"/>
+    </view>
+     
+    <view class="section">
+       <view class="title">
+                <text>名片上传</text>
+            
+            </view>
+            <view class="add_card">
+                <view class="card" bindtap="chooseFrontImage">
+                    <image wx:if="{{showCardFront!=''}}" class="card_image" src="{{showCardFront}}"/>
+                    <view wx:else class="none_card_image">
+                        <image src="/image/take_photo.png"/>
+                        <text>名片正面</text>
+                    </view>
+                </view>
+                <view class="card"  bindtap="chooseBackImage">
+                    
+                       <image wx:if="{{showCardBack!=''}}" class="card_image" src="{{showCardBack}}"/>
+                    
+                        <view wx:else  class="none_card_image">
+                            <image src="/image/take_photo.png"/>
+                            <text>名片反面</text>
+                        </view>
+                 </view>
+            </view>
+    </view>
+    
+  </view>
+
+  
+         
+        
+      
+  
+    
+ 
+    
+    <view class="add_btn">
+        <button class="btn"  loading="{{loadingAdd}}" type="default" bindtap="addCard">保存更改</button>
+        
+    </view>
+ 
+
+</view><view class="page">
+  <view class="panel">
+     <view class="section">
+            <input type="text" value="{{name}}" placeholder="姓名" bindblur="nameBind"/>
+    </view>
+    <view class="section">
+            <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{genders}}" wx:key="{{index}}">
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+            </radio-group>
+    </view>
+      <view class="section">
+            <input type="text" value="{{mobile}}" placeholder="手机号"  bindblur="mobileBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{telephone}}" placeholder="联系电话" bindblur="telephoneBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{email}}" placeholder="邮箱" bindblur="emailBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{companyName}}" placeholder="公司名" bindblur="companyNameBind"/>
+    </view>
+      <view class="section">
+            <input type="text" value="{{position}}" placeholder="职位" bindblur="positionBind"/>
+    </view>
+     
+      <view class="section">
+            <input type="text" value="{{address}}" placeholder="地址" bindblur="addressBind"/>
+    </view>
+     
+    <view class="section">
+       <view class="title">
+                <text>名片上传</text>
+            
+            </view>
+            <view class="add_card">
+                <view class="card" bindtap="chooseFrontImage">
+                    <image wx:if="{{showCardFront!=''}}" class="card_image" src="{{showCardFront}}"/>
+                    <view wx:else class="none_card_image">
+                        <image src="/image/take_photo.png"/>
+                        <text>名片正面</text>
+                    </view>
+                </view>
+                <view class="card"  bindtap="chooseBackImage">
+                    
+                       <image wx:if="{{showCardBack!=''}}" class="card_image" src="{{showCardBack}}"/>
+                    
+                        <view wx:else  class="none_card_image">
+                            <image src="/image/take_photo.png"/>
+                            <text>名片反面</text>
+                        </view>
+                 </view>
+            </view>
+    </view>
+    
+  </view>
+
+  
+         
+        
+      
+  
+    
+ 
+    
+    <view class="add_btn">
+        <button class="btn"  loading="{{loadingAdd}}" type="default" bindtap="addCard">保存更改</button>
+        
+    </view>
+ 
+
+</view>

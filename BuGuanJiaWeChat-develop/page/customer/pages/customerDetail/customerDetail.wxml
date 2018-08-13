@@ -1,0 +1,64 @@
+<view class='top' >
+  <view>
+    <text class='fl fco'>客户名称</text>
+    <text class='fr fct'>{{customerMes.name}}</text>
+  </view>
+  <view>
+    <text class='fl fco'>定位地址</text>
+    <text class='fr fct'>{{customerMes.provinceName}}{{customerMes.cityName}}{{customerMes.areaName}}</text>
+  </view>
+  <view>
+    <text class='fl fco'>详细地址</text>
+    <text class='fr fct'>{{customerMes.address}}</text>
+  </view>
+  <view>
+    <text class='fl fco'>客户规模</text>
+    <text class='fr fct'><text wx:if="{{customerMes.scale==1}}">1~10人</text>
+    <text wx:elif="{{customerMes.scale==2}}">10~20人</text>
+    <text wx:elif="{{customerMes.scale==3}}">20~50人</text>
+    <text wx:elif="{{customerMes.scale==4}}">50~100人</text>
+    <text wx:else="{{customerMes.scale===5}}">100人以上</text>
+    </text>
+  </view>
+  <view>
+    <text class='fl fco'>开户行</text>
+    <text class='fr fct'>{{customerMes.accountsBank}}</text>
+  </view>
+  <view>
+    <text class='fl fco'>账号</text>
+    <text class='fr fct'></text>
+  </view>
+  <view>
+    <text class='fl fco'>币别</text>
+    <text class='fr fct'>{{customerMes.currencyName}}</text>
+  </view>
+
+</view>
+<view class='middle'>
+  <view>
+    <text class='fl fco'>联系人</text>
+    <text class='fr fct'>{{customerMes.managerName}}</text>
+  </view>
+  <view>
+    <text class='fl fco'>联系电话</text>
+    <text class='fr fct' bindtap='handleMakeCall' data-telephone='{{customerMes.telephone}}'>{{customerMes.telephone}}</text>
+  </view>
+  <view>
+    <text class='fl fco'>邮箱</text>
+    <text class='fr fct'>{{customerMes.email}}</text>
+  </view>
+  <view>
+    <text class='fl fco'>传真</text>
+    <text class='fr fct'>{{customerMes.fax}}</text>
+  </view>
+</view>
+<view class='bottom'>
+  <view class='bottom-o'>
+    <text class='fl fco cy'>负责人</text>
+    <text class='fr fct'>{{customerMes.manager}}</text>
+  </view>
+  <view>
+    <view class='fl fco cy'>创建人</view>
+    <text class='fr fct cy'>{{customerMes.creatorName}}</text>
+  </view>
+</view>

@@ -1,0 +1,143 @@
+/* pages/user/abouttus/aboutus.wxss */
+text,view,swiper,icon,
+button,checkbox-group,checkbox,
+input,label,picker,radio-group,radio,slider,switch,textarea,
+navigator,image,video,audio,map{
+    box-sizing: border-box;
+}
+.banner{
+    height: 780rpx;
+}
+.banner_img{
+  width:100%;
+}
+
+p.fn_cell{
+  width:100%;
+  background-color: #fff;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.cell_left{
+  width:50%;
+  padding: 20rpx 30rpx;
+  display: inline-block;
+}
+.cell_right{
+  width:50%;
+  padding: 20rpx 30rpx;
+  display: inline-block;
+  
+}
+.fn_icon{
+  width:60rpx;
+  height:60rpx;
+  display: inline-block;
+  vertical-align:middle;
+}
+.fn_text{
+  margin-left:20rpx;
+  font-size: 24rpx;
+  display: inline-block;
+  vertical-align:middle;
+}
+
+
+.guide_page{
+  padding-bottom:66px;
+}
+
+.btn_home{
+    position: fixed;
+    bottom: 0;
+    padding: 20rpx 0;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+    background: #fff;
+}
+.click_me{
+    width: 95%;
+    border: none;
+    background: #FF5555;
+    color: #fff;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+       font-size: 30rpx;
+       height: 38rpx;
+    line-height: 38rpx;
+}
+
+.click_me image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-bottom: -10rpx;
+    margin-top: 10rpx;
+}
+.click_me text{
+    margin-left: 30rpx;
+}
+
+.cell_contact{
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+.cell_contact .weui-cell{
+    position: relative;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 26rpx;
+}
+.cell_contact .weui-cell image{
+    vertical-align: middle;
+}
+.info-text-one{
+    margin-left: 30rpx;
+}
+.info-text-two{
+    margin-left: 60rpx;
+}
+.phone-icon{
+    position: absolute;
+    top: 25rpx;
+    right: 50rpx;
+}
+.fr{
+    float:right;
+}
+.info_icon{
+    width: 60rpx;
+    height: 60rpx;
+}
+.ml10{
+  margin-left: 10rpx;
+  font-size: 28rpx;
+}
+
+
+.cell-btn{
+    padding: 31rpx 30rpx;
+}
+.btn-creat{
+    position: relative;
+    background: #ff5555;
+}
+.btn-creat .icon_spe{
+    position: absolute;
+    top: 19rpx;
+    left: 130rpx;
+    width: 42rpx;
+    height: 50rpx;
+}
+.domain_name{
+    text-decoration: underline;
+   font-weight: bolder;
+   color: #ff5555;
+}

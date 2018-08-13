@@ -1,0 +1,132 @@
+page{
+  background: #fff;
+}
+.top-search {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  padding: 10rpx 3% 20rpx 3%;
+  height: 60rpx;
+  background-color: #fff;
+  vertical-align: middle;
+  border-top: 1px solid #e5e5e5;
+  /* border-bottom: 1px solid #e5e5e5; */
+}
+
+.top-search .input-box {
+  position: relative;
+  width: 94%;
+}
+
+.top-search .input-box input {
+  padding-left:30rpx;
+  padding-right: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #EEF1F7;
+  font-size: 28rpx;
+  border-radius: 15rpx;
+  text-align: left;
+  margin-right: 10rpx;
+}
+
+.top-search .input-box .search-icon {
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.search-clean{
+  position: absolute;
+  top: 15rpx;
+  right: 25rpx;
+  font-size: 28rpx;
+  color: #20A0FF;
+}
+.choice{
+  background: #fff;
+}
+.start-time{
+  height: 100rpx;
+  margin-left: 3%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+.start-time-text{
+  line-height: 100rpx;
+}
+.start-time-choice{
+  line-height: 100rpx;
+  margin-right: 5%;
+  color: #20A0FF;
+}
+.end-time{
+  height: 100rpx;
+  margin-left: 3%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+.end-time-text{
+  line-height: 100rpx;
+}
+.end-time-choice{
+  line-height: 100rpx;
+  margin-right: 5%;
+  color: #20A0FF;
+}
+.buss-progrss{
+  height: 200rpx;
+}
+.buss-progrss-text{
+  margin-left: 3%;
+  line-height: 100rpx;
+}
+.progress-status{
+  width: 92%;
+  padding-left: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+.status{
+  width: 30%;
+  height: 80rpx;
+  text-align: center;
+  border:4rpx solid #CDD7E2;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+}
+.status-select{
+  width: 30%;
+  height: 80rpx;
+  text-align: center;
+  border:4rpx solid #CDD7E2;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  background: #20A0FF;
+  color: #FFF;
+}
+.bottom{
+  width: 100%;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  text-align: center;
+  line-height: 120rpx;
+}
+.bottom-reset{
+  height: 100%;
+  width: 50%;
+  background: #EEF1F7;
+}
+.bottom-confirm{
+  height: 100%;
+  width: 50%;
+  background: #20A0FF;
+  color: #FFF;
+}

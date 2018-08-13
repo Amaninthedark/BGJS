@@ -1,0 +1,263 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1532567501047'); /* IE9*/
+  src: url('iconfont.eot?t=1532567501047#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAWMAAsAAAAAB9AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFZW70goY21hcAAAAYAAAABeAAABhpnIBr5nbHlmAAAB4AAAAaQAAAGo2BRnE2hlYWQAAAOEAAAAMQAAADYSMcWvaGhlYQAAA7gAAAAgAAAAJAfzA25obXR4AAAD2AAAAAwAAAAMC+v/+mxvY2EAAAPkAAAACAAAAAgAdgDUbWF4cAAAA+wAAAAfAAAAIAESAF1uYW1lAAAEDAAAAUUAAAJtPlT+fXBvc3QAAAVUAAAANQAAAEZkkcOQeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2Bk/sk4gYGVgYOpk+kMAwNDP4RmfM1gxMjBwMDEwMrMgBUEpLmmMDgwVDxTYW7438AQwzyToREozAiSAwAndwyreJzFkMENgDAMAy9t6QMxRh88GIgXc3TirlFMKA8mqCXHimMpUYAFiOIhJrAL48Ep19yPrO4nz2SpEait9K7+U0U0y65BJTMNNm/1H5vXfXT6CnVQJ7byknADqh8MHwAAeJwNj81r1EAcQOc3k5lJajZpJslkd7b7md1MpTXSNZsexK2CHhTBz4MVL55EQS8Fq1C0iGKFFYqIqCeRFa96r+DNv0D0KiqevXqYdR/vD3gPUYSmP8geqaIQLaIVdBydRQjYEnQ93ICOLnK8BHGHxknkEZ3qDk+7OTkCSZdFclAWWcI488GDJhzqDEqdYw3DYoQPw0A2AGp1dUH0FwTZhbmqbj4yp/BbiFvpgj86YE4ur0WDdmhvukLUhBjbjFIbY8v34GYiHerMMTOhvor3WvtxC9yaVqfXK+26uLpT3Gr0EwdgexvCett7vxaoYOaWkqGo8fmKXVWVtBfB5q991dBtZD/RDDL9N71vKfIKechHxeyTsmwYFGVCmxAxPiTdTOcwgkT2Vkussx5nOJEeZDoTq2UvkYIzC/8xn1WaKjjqep77+9zLYzZ2Q/s1rN/dEA8em8nTJ/0b3Aoift3duAPnJ2+e6WXzFy59D8IWfGqGwVcmlWRgFlcO8nDeotfy8S5ceXjPub1l3r1wYpfYz+HyeOfEmYvmy8cP32bp/wHimlEweJxjYGRgYADiqxsst8Tz23xl4GZhAIHr9Q5nYfT/X//rWaSYZwK5HAxMIFEAaHwNJAAAAHicY2BkYGBu+N/AEMPC9P/X/xcsUgxAERTADACgeQZoBAAAAAPpAAAEAv/6AAAAAAB2ANR4nGNgZGBgYGYIZGBlAAEmIOYCQgaG/2A+AwAQ9wFwAHicZY9NTsMwEIVf+gekEqqoYIfkBWIBKP0Rq25YVGr3XXTfpk6bKokjx63UA3AejsAJOALcgDvwSCebNpbH37x5Y08A3OAHHo7fLfeRPVwyO3INF7gXrlN/EG6QX4SbaONVuEX9TdjHM6bCbXRheYPXuGL2hHdhDx18CNdwjU/hOvUv4Qb5W7iJO/wKt9Dx6sI+5l5XuI1HL/bHVi+cXqnlQcWhySKTOb+CmV7vkoWt0uqca1vEJlODoF9JU51pW91T7NdD5yIVWZOqCas6SYzKrdnq0AUb5/JRrxeJHoQm5Vhj/rbGAo5xBYUlDowxQhhkiMro6DtVZvSvsUPCXntWPc3ndFsU1P9zhQEC9M9cU7qy0nk6T4E9XxtSdXQrbsuelDSRXs1JErJCXta2VELqATZlV44RelzRiT8oZ0j/AAlabsgAAAB4nGNgYoAALgbsgJmRiZGZkYWBsULCLTMvMSelKDGtRLc4I7MgMy8rM7U4IzGfgQEAnb0KQwAAAA==') format('woff'),
+  url('iconfont.ttf?t=1532567501047') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1532567501047#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shipinjieshao:before { content: "\e624"; }
+
+
+page{
+  background-color: #f5f5f5;
+}
+.header_box{
+  width: 100%;
+  height:50px;
+  line-height: 50px;
+  background: #ffffff;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  display: flex;
+}
+.header_img{
+width: 40px;
+height: 40px; 
+line-height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 20px;
+
+}
+.header_img image{
+  height: 40px;
+  width: 40px;
+}
+.header_title{
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  font-size: 0.889rem;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.info_box{
+  margin-top: 20px;
+}
+.info_item{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #fff;
+  display: flex;
+}
+.weui-cells{
+  background-color: #f5f5f5;
+}
+.weui-cell{
+  padding: 15px;
+  background-color: #fff;
+}
+ .weui-cell__bd{
+  font-size: 0.9rem;
+}
+.fr{
+  float:right;
+}
+.info_icon{
+  width: 20px;
+  height: 20px;
+}
+.icon-shipinjieshao{
+ 
+}
+.ml10{
+  margin-left: 10px;
+}
+.linear{ 
+  width:100%;
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#0176ff), to(#55a3ff));
+} 
+
+.fiex-bottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 120rpx;
+    background-color: #fff;
+    box-shadow: 0 4rpx 8rpx 0 rgba(0, 0, 0, 0.1);
+}
+.fiex-bottom view{
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}
+
+.fiex-bottom view image{
+    display: block;
+    margin: 20rpx auto 0;
+    width: 40rpx;
+    height: 40rpx;
+}
+.fiex-bottom view text{
+    font-size: 24rpx;
+    color: #7F8FA4;
+}
+.fiex-bottom view.active text{
+    color: #20a0ff;
+}
+
+.modal-box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  }
+
+.modal-body{
+  position:relative;
+  }
+
+.modal-content{
+   width: 100%; 
+ margin-top: 40%;
+  overflow: hidden;
+  border-radius: 10rpx;
+  
+  }
+  .modal-video{
+    width: 100%;
+    height: 422.5rpx;
+  }
+
+/*.page{
+  background: #fff;
+  height: 100%;
+}
+
+.header_box{
+  width: 100%;
+  height:25%;
+  line-height: 25%;
+  background: #ffffff;
+  text-align: center;
+  padding-top: 15%; 
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  z-index: 1000;
+
+}
+.header_img{
+width: 50px;
+height: 50px; 
+line-height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: -10px;
+
+
+
+ 
+}
+.header_img image{
+  height: 50px;
+  width: 50px;
+  
+
+}
+
+.header_title{
+  height: 20px;
+  line-height: 20px;
+  color: #6a6a6a;
+  font-size: 0.889rem;
+  margin-top: 10px;
+
+ 
+}
+.container{
+  margin-top: 3px;
+}
+.container .panel{
+  height: 33.3%;
+  line-height: 33.3%;
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+}
+.panel image{
+  width: 30px;
+  height: 31px;
+}
+.panel text{
+  display: block;
+  margin-top: 20px;
+  color: #9b9b9b;
+  font-size: 35rpx;
+}
+.add{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+}
+.add image{
+   width: 45px;
+   height: 45px;  
+  
+
+}
+
+.none_pic{
+  color: #a8a8a8;
+  margin: 0 auto;
+ margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-size: 0.9rem;
+}
+.code_pic{
+  color: #a8a8a8;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-size: 0.9rem;
+}
+.img-box{
+  text-align: center;
+  position: relative;
+  background: #fff;
+
+  }
+  .shape-box{
+    margin-top: 50px;
+  }
+  .card-box{
+    margin-top: 20px;
+  }
+.shape-box image{
+  width: 186rpx;
+  height: 186rpx;
+  }
+  .card-box image{
+    width: 220px;
+    height: 210px;
+  }*/
+

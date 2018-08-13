@@ -1,0 +1,49 @@
+<import src="../../../common/foot.wxml"/>
+<view class="page">
+   <view class="container">
+      <!--<view class="item item_new">
+           <navigator url="../../../card/pages/addCard/addCard?type=0" class="add_new"> 
+             <image class="add_img" src="/image/add.png"/>
+             <text>+</text>
+            
+           </navigator>
+      </view>-->
+    <!--<view   class="none_item">     
+      <view class="weui-cell__bd desc none_card">还没有同事哦，点击右上方分享可邀请同事与您一起管理该展会^_^</view> 
+    </view>-->
+    <view  class="item" wx:for="{{friends}}" wx:key="{{index}}">
+            <image wx:if="{{item.avatar}}" src="{{item.avatar}}?x-oss-process=image/resize,m_fill,h_50,w_50" data-src="{{item.avatar}}"></image>
+            <view wx:else class="card linear"><text>{{item.name}}</text></view>
+            <view class="weui-cell__bd desc"><text>{{item.name}}</text></view>
+          
+    </view>
+  </view>
+    <view class="shadow" hidden="{{!shadow}}" bindtap="hideShadow">
+    
+    </view>
+    <view class="tip" hidden="{{!shadow}}">
+        <image class="toshare" src="/image/jiantou.png"/>
+        <text>分享可邀请同事与你一起管理</text>
+   
+        <button type="default" size="mini" class="btn" bindtap="hideShadow">我知道了</button>
+        <checkbox-group class="no_show" bindchange="checkboxChange">
+          <label class="check_box">
+             <checkbox class="checkbox check" value="show" color="#56a4ff" size="mini" checked="{{checked}}"/>
+             <image wx:if="{{!checked}}" class="choose_image check" src="/image/none_choose.png"/>
+             <image wx:else class="choose_image check" src="/image/choosed.png"/>
+              不再显示
+          </label>
+         
+          
+      </checkbox-group>
+    </view>
+      <view class="loading-view">
+      <loading hidden="{{!loading}}" bindchange="loadingChange">
+        加载中...
+      </loading>
+  </view>
+
+  <import src="../../tabbar/tabbar.wxml" />
+  <template is="tabbar" data="{{tabBar: tabBar }}" />
+
+</view>

@@ -1,0 +1,41 @@
+<import src="../../../common/foot.wxml"/>
+<view class="page">
+   <view class="container">
+      <view class="item item_new">
+           <navigator url="../../../card/pages/addCard/addCard?type=0" class="add_new"> 
+             <image class="add_img" src="/image/add_new.png"/>
+             <!--<text>+</text>-->
+            
+           </navigator>
+      </view>
+    <!--<view wx:if="{{contacts.length==0}}"  class="none_item">
+           
+            <view class="weui-cell__bd desc none_card">暂无名片</view>
+         
+      </view>-->
+      <view  class="item" wx:for="{{contacts}}" wx:key="{{index}}">
+            <image wx:if="{{item.cardFront}}" data-id="{{item.contactId}}" src="{{item.cardFront}}?x-oss-process=image/resize,m_fill,h_70,w_110" data-src="{{item.cardFront}}" bindtap="toCardDetail"></image>
+            <view wx:else class="card linear"><text>{{item.name}}</text></view>
+            <view class="weui-cell__bd desc"  id="{{item.contactId}}" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="contactAction">已添加<text>{{item.sampleNum}}</text>个样品</view>
+            <!--<view class="weui-cell__bd desc">{{item.contactId}}</view>-->
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+
+    </view>
+       <view class="loading-view">
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+  </view>
+  <action-sheet hidden="{{!showActionsSheet}}" bindchange="hideActionSheet">
+      <!--<action-sheet-item bindtap="toCardDetail">名片详情</action-sheet-item>-->
+      <action-sheet-item class="warn" bindtap="toDeleteCard">删除名片</action-sheet-item>
+      <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+  </action-sheet>
+    <import src="../../tabbar/tabbar.wxml" />
+    <template is="tabbar" data="{{tabBar: tabBar }}" />
+     <!--<navigator url="../../../card/pages/addCard/addCard?type=0" class="add"> 
+             <image class="add_img" src="/image/add.png"/>
+            
+     </navigator>-->
+</view>

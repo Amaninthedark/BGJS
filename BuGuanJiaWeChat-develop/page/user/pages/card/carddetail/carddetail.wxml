@@ -1,0 +1,10 @@
+<!--pages/user/carddetail/carddetail.wxml-->
+<view>
+  <view class="wrap_card">
+    <image class="user_img" src="{{userinfo.avatar}}" mode="aspectFill"></image>
+    <view class="name_wrap">{{userinfo.userName}}专属<text class="card_text">小程序码</text></view>
+    <view class="hint_view">扫一扫添加我的名片</view>
+    <image class="mini_img" src="{{codeurl}}"></image>
+    <view class="hlep-tips"> 保存图片发送到朋友圈，让大家都知道你</view>
+  </view>
+</view>

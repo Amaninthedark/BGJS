@@ -1,0 +1,270 @@
+@import "../../../common/lib/weui.wxss";
+.sample_list_page{
+    background-color: #EFEFF4;
+}
+.samples{
+    margin-top: 10px;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.sample_list{
+    background-color: #EFEFF4;
+    height: 100%;
+    margin-top: 10px;
+    /*margin-bottom: 50px;*/
+}
+.sample_item{
+    width: 50%;
+    float: left;
+    height: 280px;
+    
+}
+.sample_list::after{
+    content: '';
+    clear:both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.sample{
+    width: 90%;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: -279px;
+  
+    
+}
+.sample_border{
+    position: relative;   
+    /*top: 270px; */
+    width: 94%;
+    height: 274px;
+    z-index: 999;
+    margin-left: 3%;
+    overflow: hidden;
+    margin-top: -35px;
+}
+.sample .sample_img{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.sample .sample_img .image{
+    height: 150px;
+    width: 100%;
+}
+
+.sample .sample_img .tip{
+    position: relative;
+    left: 5px;
+    top:-30px;
+    color: #fff;
+}
+.sample .sample_content{
+    padding:3px 10px 0 10px;
+    height: 118px;
+    /*margin-top: 5px;*/
+}
+.sample .sample_content text{
+    display: block;
+}
+
+
+.sample .sample_content text{
+    padding-bottom:1px;
+    color: #4a4a4a;
+    font-size: 0.79rem;
+    letter-spacing: 0.125em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.edit_sample{
+    width: 25px;
+    height: 25px;
+    margin-left: 70%;
+    position: relative;
+    top: -30px;
+    z-index: 999;
+}
+.weui-search-bar__cancel-btn{
+    color: #56a4ff;
+}
+/*.weui-search-bar__box{
+    z-index: 100001
+}*/
+.no_sample_list{
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    font-size: 1rem;
+    color: #999;
+}
+.search-sample{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10001;
+}
+.sample_view{
+    height: 1460px;
+}
+action-sheet-item.warn {
+    color: #e64340;
+}
+/*.weui-search-bar__label{
+    line-height: 31px;
+}*/
+
+.black{
+    height: 40px;
+    width: 100%;
+    display: block;
+    visibility: hidden;
+    position: absolute;
+}
+/*底部导航条*/
+.tabbar{
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    margin-left: -25px;
+    margin-bottom: 5px;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    z-index: 100001;
+  
+}
+.tabbar image{
+    width: 45px;
+    height: 45px;
+}
+.nochoose{
+   
+    opacity: 0;
+}
+.choose{
+    left: 18px;   
+    position: relative;
+    z-index: 10000;    
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+.choose_btn{  
+
+    opacity: 1; 
+
+
+}
+.choosed_btn{
+  
+    left: 18px;   
+    position: relative;
+    z-index: 200;
+    opacity: 1;
+     width: 30px;
+    height: 30px;
+    line-height: 30px;
+
+}
+.choose image{
+    width: 20px;
+    height: 20px;
+}
+.choose image{
+    width: 20px;
+    height: 20px;
+}
+.choose image{
+    width: 20px;
+    height: 20px;
+}
+.choose_image{
+    /*position: relative;*/
+    /*top: -30px;*/
+    z-index: 100;
+}
+.btn text{
+    color: #7b7b7b;
+    font-size: 0.865rem;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 15px;
+}
+.scan image{
+    width: 22px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+    
+}
+.scan text{
+    color: #bdc4c7;
+    display: block;
+    font-size: 0.666rem;
+    margin-left: -5px;
+    margin-top: -7px;
+}
+.btn_group{
+     /*box-shadow: 0 0 11px rgba(0,0,0,0.3);*/
+     height: 50px;
+     line-height: 50px;
+     padding-top: 0;
+}
+.btn_group .btn::before{
+    -webkit-transform-origin:0 0;
+    transform-origin:0 0;
+    -webkit-transform:scaleY(0.5);
+    transform:scaleY(0.5);
+}
+.btn_group .btn_left text{
+     border-right: 1px solid #ddd;
+     display: block;
+    
+}
+/*.btn_group .btn .text{
+     display: flex;
+    
+   
+}*/
+.btn_group .btn .tip{
+    color: red;
+
+}
+.viewers{
+ 
+    position: relative;
+    top: -30px;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 1000;
+    overflow: hidden;
+
+}
+.viewers image{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+    /*float: left;*/
+
+}
+.viewers .people_view{
+    float: right;
+}
+
+
+

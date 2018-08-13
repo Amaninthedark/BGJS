@@ -1,0 +1,40 @@
+
+<view class="container">
+
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+
+      <view class="page-section-ctn exhibitions">
+           <view class="item item_new" bindtap="addExhibition">
+           
+             <view class="add_e"> 
+             <image class="add_img" src="/image/add_new.png"/>            
+           </view>
+            <text class="add_new">添加新展会</text>
+         </view>
+        <!--<view class="item" wx:if="{{exhibition.length==0}}">
+            <image class="image" src="http://image.buguanjia.net/cover.jpg"/>
+            <text class="name">暂无展会</text>
+        </view>-->
+        <view class="item item_e" wx:for="{{exhibition}}" wx:key="{{index}}" id="{{item.expoId}}" data-name="{{item.name}}" name="{{item.name}}" >
+            <image  id="{{item. expoId}}" data-name="{{item.name}}" name="{{item.name}}" bindtap="toExhibition" class="image" src="http://image.buguanjia.net/cover.jpg"/>
+            <text class="name">{{item.name}} \n {{item.expoDate}}</text>
+          
+        </view>
+     
+       
+        
+      </view>
+        
+    </view>
+    <modal hidden="{{!showAdd}}" title="新建展会" confirm-text="确定" confirm-color="#56a4ff" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+      <input placeholder="{{placeholder}}" value="{{name}}" class="input_add" bindblur="nameBind"/>
+  </modal>
+   <modal hidden="{{!showChoose}}" title="导入名片" confirm-text="观众" confirm-color="#56a4ff" cancel-text="展商" bindcancel="chooseE" bindconfirm="chooseA">
+     请选择您要添加的名片类型
+  </modal>
+  
+  
+  </view>
+
+</view>

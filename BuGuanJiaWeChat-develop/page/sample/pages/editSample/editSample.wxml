@@ -1,0 +1,166 @@
+<view class="top-tab flex-wrp flex-tab">
+  <view class="toptab flex-item active">
+    样品信息
+  </view>
+</view>
+<view class="ctnt">
+
+  <view class="ctnt0">
+    <view class="unread">
+        <view class="panel">
+        <view class="section" wx:for="{{attributes}}" wx:if="{{ index < 7}}" wx:key="{{item.index}}">
+            <text class="input-label">{{item.prettyName}}</text>
+            <!--纯文本情况  -->
+            <input wx:if="{{item.valueType === 0}}" type="text" placeholder="输入{{item.prettyName}}{{item.isRequired===1 ? '(必填)' : ''}}" disabled="{{item.attributeId === 1 || item.attributeId === 441}}" placeholder-class="color9b9b9b" value="{{item.value}}" data-index="{{item.index}}"  bindfocus="hideTagsHelp" bindinput="handleAttrInput" />
+            <!--文本+选项  -->
+            <view wx:if="{{item.valueType === 1}}">
+                <input type="text" placeholder="输入{{item.prettyName}}{{item.isRequired===1 ? '(必填)' : ''}}" placeholder-class="color9b9b9b" value="{{item.value}}" data-index="{{item.index}}"  bindfocus="handleTabShow" bindinput="handleAttrInput" />
+                <view  hidden="{{!focus[item.index]}}"  class="help_info">
+                    <text wx:for="{{item.options}}" wx:for-item="option" wx:key="{{option}}" data-index="{{item.index}}" data-val="{{option}}" bindtap="handleTabSelect">{{option}}</text>
+                </view>
+            </view>
+            <!--纯选项  -->
+            <picker wx:if="{{item.valueType === 2}}" mode="selector" class="item-select" range="{{item.options}}" value="{{item.selected}}" data-index="{{item.index}}"  bindchange="hangleSlideSelect">
+              <text>{{item.options[item.selected] || '选择' + item.prettyName}}</text>
+            </picker>
+            <!--日期  -->
+            <view wx:if="{{item.valueType === 3}}" class="item-select">
+                <picker mode="date"  value="{{item.dateArr[0]}}" data-index="{{item.index}}" bindchange="handleDateSelect">
+                    <text>{{item.dateArr[0] || '选择日期'}}</text>
+                </picker>
+                <picker mode="time"  value="{{item.dateArr[1]}}" data-index="{{item.index}}" bindchange="handleTimeSelect">
+                    <text>{{item.dateArr[1] || '选择时间'}}</text>
+                </picker>
+                <text class="clear-date" data-index="{{item.index}}" bindtap="handleClearDate">清空</text>
+            </view>
+        </view>
+                
+        <view class="section">   
+            <view class="page__bd">
+                <view class="weui-cells">
+                    <view class="weui-cell">
+                        <view class="weui-cell__bd">
+                            <view class="weui-uploader">
+                                <view class="weui-uploader__hd">
+                                    <view class="weui-uploader__title">
+                                        <picker mode="selector" range="{{pic_types}}" value="{{current_pic_type}}" bindchange="changeType">
+                                          <text class="pic-select">{{pic_types[current_pic_type]}}</text>
+                                        </picker>
+                                        
+                                
+                                
+                                    </view>
+                                </view>
+                                <view wx:if="{{showType[0]}}" class="weui-uploader__bd public_pics">
+                                    <view class="weui-uploader__files" id="uploaderPublicFiles">
+                                        <block wx:for-items="{{upload_pics[0].showPath}}" wx:key="{{index}}">
+                                            <view class="weui-uploader__file" id="{{item}}" data-src="{{item}}" data-index="0" bindtap="showActions">
+                                                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                                <!--<icon data-index="{{index}}" type="clear" class="delete_pic" color="#fff" size="18" bindtap="deletePublicImg"></icon>-->
+                                            </view>
+                                        </block>
+                                    </view>
+                                    <view class="weui-uploader__input-box">
+                                        <view class="weui-uploader__input" bindtap="choosePublicImage"></view>
+                                    </view>
+                                </view>
+                                <view wx:if="{{showType[2]}}" class="weui-uploader__bd inner_pics">
+                                    <view class="weui-uploader__files" id="uploaderInnerFiles">
+                                        <block wx:for-items="{{upload_pics[1].showPath}}" wx:key="{{index}}">
+                                            <view class="weui-uploader__file" bindtap="showActions" id="{{item}}" data-src="{{item}}" data-index="1">
+                                                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill"/>
+                                                <!--<icon  data-index="{{index}}" type="cancel" class="delete_pic" color="#fff" size="18"></icon>-->
+                                            </view>
+                                        </block>
+                                    </view>
+                                    <view class="weui-uploader__input-box">
+                                        <view class="weui-uploader__input" bindtap="chooseInnerImage"></view>
+                                    </view>
+                                </view>
+                                <view wx:if="{{showType[1]}}" class="weui-uploader__bd private_pics">
+                                    <view class="weui-uploader__files" id="uploaderPrivateFiles">
+                                        <block wx:for-items="{{upload_pics[2].showPath}}" wx:key="{{index}}">
+                                            <view class="weui-uploader__file" id="{{item}}" bindtap="showActions" data-src="{{item}}" data-index="2">
+                                                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                                <!--<icon  data-index="{{index}}" type="cancel" class="delete_pic" co></icon>-->
+                                            </view>
+                                        </block>
+                                    </view>
+                                    <view class="weui-uploader__input-box">
+                                        <view class="weui-uploader__input" bindtap="choosePrivateImage"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+          <text class="input-label">样品标记</text>
+          <view class="addTags">
+            <view class="tags">
+            <text wx:for="{{addTags}}" wx:key="{{index}}"  data-index="{{index}}" bindtap="deleteTag">{{item}}</text>
+            </view>
+            <input type="text" placeholder="添加标记（按确定键结束）" placeholder-class="color9b9b9b"  value="{{tagName}}" bindfocus="showTagsHelp" bindconfirm="addTag"/>
+          
+          </view>
+          <view  hidden="{{!showCloud}}" class="help_info">
+              <text wx:for="{{tags}}" wx:key="{{index}}" bindtap="addTagsVal" data-val="{{item.name}}">{{item.name}}</text>
+          </view>
+        </view>
+        <view class="section" wx:for="{{attributes}}" wx:if="{{ index > 6}}" wx:key="{{item.index}}">
+            <text class="input-label">{{item.prettyName}}</text>
+            <!--纯文本情况  -->
+            <input wx:if="{{item.valueType === 0}}" type="text" placeholder="输入{{item.prettyName}}{{item.isRequired===1 ? '(必填)' : ''}}" disabled="{{item.attributeId === 1}}" placeholder-class="color9b9b9b" value="{{item.value}}" data-index="{{item.index}}"  bindfocus="hideTagsHelp" bindinput="handleAttrInput" />
+            <!--文本+选项  -->
+            <view wx:if="{{item.valueType === 1}}">
+                <input type="text" placeholder="输入{{item.prettyName}}{{item.isRequired===1 ? '(必填)' : ''}}" placeholder-class="color9b9b9b" value="{{item.value}}" data-index="{{item.index}}"  bindfocus="handleTabShow" bindinput="handleAttrInput" />
+                <view  hidden="{{!focus[item.index]}}"  class="help_info">
+                    <text wx:for="{{item.options}}" wx:for-item="option" wx:key="{{option}}" data-index="{{item.index}}" data-val="{{option}}" bindtap="handleTabSelect">{{option}}</text>
+                </view>
+            </view>
+            <!--纯选项  -->
+            <picker wx:if="{{item.valueType === 2}}" mode="selector" class="item-select" range="{{item.options}}" value="{{item.selected}}" data-index="{{item.index}}"  bindchange="hangleSlideSelect">
+              <text>{{item.options[item.selected] || '选择' + item.prettyName}}</text>
+            </picker>
+            <!--日期  -->
+            <view wx:if="{{item.valueType === 3}}" class="item-select">
+                <picker mode="date"  value="{{item.dateArr[0]}}" data-index="{{item.index}}" bindchange="handleDateSelect">
+                    <text>{{item.dateArr[0] || '选择日期'}}</text>
+                </picker>
+                <picker mode="time"  value="{{item.dateArr[1]}}" data-index="{{item.index}}" bindchange="handleTimeSelect">
+                    <text>{{item.dateArr[1] || '选择时间'}}</text>
+                </picker>
+                <text class="clear-date" data-index="{{item.index}}" bindtap="handleClearDate">清空</text>
+            </view>
+        </view>
+        <!--<swiper class="swiper-container" duration="400" current="{{previewIndex}}" bindtap="leavePreviewMode" style="display: {{previewMode ? 'block' : 'none'}};">
+    <block wx:for="{{albumList}}" wx:for-item="item">
+        <swiper-item>
+        <image src="{{item}}" mode="aspectFit"></image>
+        </swiper-item>
+    </block>
+    </swiper>-->
+
+    <action-sheet hidden="{{!showActionsSheet}}" bindchange="hideActionSheet">
+        <!--<action-sheet-item bindtap="downloadImage">保存到本地</action-sheet-item>-->
+        <action-sheet-item class="warn" bindtap="deleteImage">删除图片</action-sheet-item>
+        <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
+    <loading hidden="{{!showLoading}}" bindchange="hideLoading">{{loadingMessage}}</loading>
+    <toast hidden="{{!showToast}}" duration="1000" bindchange="hideToast">{{toastMessage}}</toast>
+        
+
+    <view class="empty-120box"> 
+    </view>
+    </view>
+        <view class="save">
+            <button class="save_btn"  loading="{{loadingSave}}" type="default" bindtap="saveSample">保存样品</button>
+           
+        </view>
+
+    </view>
+   
+  </view>
+  </view>

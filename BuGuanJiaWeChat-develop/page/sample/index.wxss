@@ -1,0 +1,269 @@
+@import "../common/index.wxss";
+.page-section-ctn {
+  text-align: center;
+  margin-top: 10px;
+}
+.container,.page-body{
+  height: 100%;
+}
+.item{
+    position: relative;
+    width:100%;
+    height: 300rpx;
+    border-radius: 20rpx;
+    margin-top: 10px;
+
+}
+
+.item .image {
+
+  width: 100%;
+  height: 300rpx;
+  border-radius: 20rpx;
+
+}
+.item .name{
+  position: relative;
+  width:90%;
+  height: 160rpx;   
+  text-align: center;
+  color: #fff;
+  opacity: 0.85;
+  
+  font-weight: 500;
+  z-index: 998;
+  margin: 0 auto;
+  display: block;
+
+}
+.item .name_bar{
+  font-size: 40rpx;
+  top:50rpx;
+  
+}
+.item .time_bar{
+  font-size: 26rpx;
+}
+.item .no_bar{
+  top: 120rpx;
+}
+/*.item:nth-child(2){
+  margin-top: -15px;
+}*/
+.item_new{
+  border: 1px solid #fff;
+  vertical-align: middle;
+  text-align: center;
+  background: #fff;
+}
+
+.item_new .add_new{
+  margin-top: 70rpx;
+}
+.item_new .add_new image{
+   width: 45px;
+   height: 45px;  
+}
+.item_new .add_new{
+  color: #56a4ff;
+  font-size: 0.857rem;
+  letter-spacing: 0.08em;
+
+}
+.company_type{
+  display: flex;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+.company_icon{
+  
+  width: 20px;
+  height: 20px;
+}
+
+.company_title{
+  margin-top: 1rpx;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #4a4a4a;
+  
+}
+.line{
+  border-top: 1px solid #e3e3e6;
+  width:20%;
+  margin-top: 9.5px;
+  margin-left: 10px;
+
+}
+.addCompany{
+  border: 1px solid #9b9b9b;
+  margin-top: 20px;
+  background: #fff; 
+   line-height: 300rpx;
+ 
+}
+.addCompany image{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: 0 auto;
+   position: relative;
+   left: 50%;
+   margin-left: -20px;
+
+}
+.addCompany text{
+  font-size: 0.954rem;
+  position: relative;
+  top: 20px;
+  left: 50%;
+  width: 200px;
+  margin-left: -65px;
+  text-align: center;
+  color: #7A7E83;
+ 
+}
+.add{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+}
+.add image{
+   width: 45px;
+   height: 45px;  
+  
+
+}
+.actionBar{
+  position: relative;
+  top:10px;
+  width: 35%;
+  /*z-index: 999;*/
+  display: flex;
+  height:30px;
+  justify-content:flex-end;
+}
+.manage{
+  left: 65%;
+}
+.join{
+  left: 65%;
+}
+
+.actionBar .icon{
+ 
+  width: 60rpx;
+  text-align: left;
+  height: 21px;
+  
+}
+.actionBar .only_icon{
+   width:50%;
+   text-align: right;
+  
+}
+.actionBar .default_icon{
+  height: 21px;
+  width: 21px;
+}
+.actionBar .pay_icon{
+  height: 20px;
+  width: 20px;
+}
+.actionBar .set_icon{
+  height: 21px;
+  width: 21px;
+
+}
+.input_add{
+  border: 1px solid #ccc;
+  padding:5px;
+}
+.modal{
+  z-index: 20000;
+}
+/*下拉箭头*/
+.icon .area {  
+    /*margin:100px auto;  
+    width:300px;   
+    height: 150px;   */
+    position: relative;
+    margin-left: 12rpx;
+    margin-top: -10rpx;
+    z-index: 10001;
+}  
+.icon .dot_item {  
+    float:left; clear:both;     
+    /*margin-left: 20rpx;*/
+}  
+
+.icon .dot_top {  
+    font-size: 0;  
+    line-height: 0px;  
+    border-width: 16rpx 10rpx;  
+    /*border-height:10px;*/
+    border-color: #fff;  
+    border-top-width: 0px;  
+    border-style: dashed;  
+    border-bottom-style: solid;  
+    border-left-color: transparent;  
+    border-right-color: transparent;  
+} 
+.icon .area .edit_content{
+  width: 180rpx;
+  /*height:180rpx;*/
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  top: 16rpx;
+  left: -150rpx;
+  font-size: 0.8rem;
+  
+}
+.icon .area .edit_content .action{
+  height: 80rpx;
+  line-height:80rpx;
+  width: 90%;
+  text-align: center;
+  color: #595959;
+  margin: 0 auto;
+
+  
+  
+}
+.icon .area .edit_content .delete_company{
+  text-align: center;
+}
+.icon .area .edit_content .action:not(:last-child){
+  border-bottom: 1px solid #f0f0f0;
+}
+.shadow{
+  opacity: 0.5;
+}
+
+.item.item_invite{
+    color: #fff;
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#F84E8A), to(#FF7190));
+}
+.item .invite-btn-box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70rpx;
+    font-size: 30rpx;
+    box-sizing: border-box;
+}
+.invite-btn-box view{
+    width: 120rpx;
+    height: 60rpx;
+    font-size: 28rpx;
+}
+.invite-btn-box .no-btn{
+    float: left;
+}
+.invite-btn-box .ok-btn{
+    float: right;
+}

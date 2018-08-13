@@ -1,0 +1,255 @@
+
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1528270691362'); /* IE9*/
+  src: url('iconfont.eot?t=1528270691362#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1528270691362') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1528270691362#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xinjiananniu:before { content: "\e62f"; }
+
+.icon-tianjia:before { content: "\e634"; }
+
+.icon-icontouxiang:before { content: "\e678"; }
+
+.icon-buoumaotubiao47:before { content: "\e62a"; }
+
+.icon-star:before { content: "\e60c"; }
+
+.icon-tubiaolunkuo-:before { content: "\e615"; }
+
+.icon-touxiang:before { content: "\e60d"; }
+
+.icon-dianhua:before { content: "\e63e"; }
+
+
+
+
+
+
+.addMail{
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+.add-top{
+  height: 10rpx;
+  background: #f5f5f5;
+}
+input{
+  /* width: 65%; */
+  height: 40rpx;
+  margin-top: 25rpx;
+  font-size: 30rpx;
+}
+.section{
+  height: 100rpx;
+}
+.picker{
+  font-size: 30rpx;
+  color: rgb(109, 109, 109);
+}
+.companypic{
+  width: 70%;
+}
+.add-name{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.name-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.add-name text{
+  color: red;
+}
+
+.add-phone{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.phone-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.add-phone text{
+  color: red;
+}
+
+.add-company{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.company-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+
+.add-star{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.star-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.star5{
+  display: flex;
+}
+.icon-star{
+  margin-right: 10rpx;
+  font-size: 40rpx;
+  color: #D4D4D4;
+}
+.staron{
+  color: #EE7600;
+}
+.add-address{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.address-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.add-addressDt{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.addressDt-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.add-mailbox{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.mailbox-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.add-fax{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.fax-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.add-source{
+  height: 100rpx;
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin-left: 5%;
+}
+.source-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.add-card{
+  background: white; 
+  display: flex;
+  line-height: 100rpx;
+  margin-left: 5%;
+  /* margin-bottom: 100rpx; */
+  padding-bottom: 10rpx;
+}
+.card-text{
+  font-size: 30rpx;
+  width: 25%;
+}
+.card-right{
+  width: 70%;
+}
+.card-pic{
+  float: left;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right:15rpx;
+  margin-top: 30rpx;
+  background:rgb(237, 237, 237);
+}
+.icon-tianjia{
+  font-size: 60rpx;
+  text-align: center;
+  line-height: 150rpx;
+  color: rgb(212, 212, 212);
+}
+
+.card-img image{
+  float: left;
+  margin-top: 30rpx;
+  margin-right: 15rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.save{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-left: 10%;
+  background: #87CEFA	;
+  border-radius: 15rpx;
+  /* margin-bottom: 30rpx; */
+}
+.fiexd-100bottom{
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+}
+.fiexd-100bottom button{
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background-color: #20a0ff;
+  color: #fff;
+  line-height: 100rpx;
+
+}

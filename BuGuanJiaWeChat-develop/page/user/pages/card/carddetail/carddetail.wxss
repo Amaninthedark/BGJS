@@ -1,0 +1,35 @@
+/* pages/user/carddetail/carddetail.wxss */
+page{
+  background-color: #fff;
+}
+.wrap_card{
+  margin-top: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user_img{
+  margin-bottom: 20rpx;
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 8rpx;
+}
+.name_wrap{
+  color: #4D8862;
+}
+.card_text{
+  color: #000;
+}
+.hint_view{
+  color: #9B9B9B;
+}
+.mini_img{
+  margin-top:60rpx;
+  width: 300rpx;
+  height: 300rpx;
+}
+.hlep-tips{
+  margin-top: 40rpx;
+  color: #9B9B9B;
+  font-size: 24rpx;
+}

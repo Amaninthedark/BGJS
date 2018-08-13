@@ -1,0 +1,117 @@
+@import "../common/index.wxss";
+.page-section-ctn {
+  text-align: center;
+  margin-top: 10px;
+}
+.container,.page-body{
+  height: 100%;
+}
+.item{
+  width:100%;
+  height: 300rpx;
+  margin-top: 10px;
+  border-radius: 20rpx;
+
+}
+
+.item .image {
+  margin-top: 30rpx;
+  width: 100%;
+  height: 300rpx;
+  border-radius: 20rpx;
+
+}
+.item .name{
+  position: relative;
+  width:100%;
+  height: 160rpx; 
+  top:-200rpx;
+  text-align: center;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  z-index: 1000;
+
+}
+
+.item .time{
+  position: relative;
+  width:100%;
+  height: 160rpx; 
+  top:-100rpx;
+  text-align: center;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  z-index: 1000;
+
+}
+.company_type{
+  display: flex;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+.company_icon{
+  
+  width: 20px;
+  height: 20px;
+}
+
+.company_title{
+  margin-top: 1rpx;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #4a4a4a;
+  
+}
+.line{
+  border-top: 1px solid #e3e3e6;
+  width:20%;
+  margin-top: 9.5px;
+  margin-left: 10px;
+
+}
+
+.item_new{
+  border: 1px solid #fff;
+  vertical-align: middle;
+  margin-bottom: -10px;
+  background: #fff;
+}
+
+.item_new .add_e{
+  margin-top: 30px;
+}
+.item_new .add_e image{
+   width: 45px;
+   height: 45px;  
+}
+.item_new .add_new{
+  color: #56a4ff;
+  font-size: 0.857rem;
+  letter-spacing: 0.08em;
+
+}
+.add{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+}
+.add image{
+   width: 45px;
+   height: 45px;  
+  
+
+}
+.linear{ 
+  width:100%;
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#56a4ff), to(#78b5fd));
+} 
+
+.input_add{
+  border: 1px solid #ccc;
+  padding:5px;
+}

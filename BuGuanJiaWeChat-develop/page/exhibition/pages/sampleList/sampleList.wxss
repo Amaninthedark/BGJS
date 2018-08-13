@@ -1,0 +1,159 @@
+@import "../../../common/lib/weui.wxss";
+.sample_list_page{
+    background-color: #EFEFF4;
+}
+.samples{
+    margin-top: 10px;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.sample_list{
+    background-color: #EFEFF4;
+    height: 100%;
+    margin-top: 10px;
+    /*margin-bottom: 45px;*/
+}
+.sample_item{
+    width: 50%;
+    float: left;
+    height: 280px;
+    
+}
+.sample_list::after{
+    content: '';
+    clear:both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.sample{
+    width: 90%;
+    margin: 0 auto;
+    background: #fff;
+    
+}
+.sample .sample_img{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.sample .sample_img .image{
+    height: 150px;
+    width: 100%;
+}
+
+.sample .sample_img .tip{
+    position: relative;
+    left: 5px;
+    top:-30px;
+    color: #fff;
+}
+.sample .sample_content{
+    padding:10px;
+    height: 100px;
+}
+.sample .sample_content text{
+    display: block;
+}
+
+.sample .sample_content text{
+    padding-bottom: 5px;
+    color: #4a4a4a;
+    font-size: 0.79rem;
+    letter-spacing: 0.125em;
+    white-space: normal;
+    /*text-overflow: ellipsis;*/
+    overflow: hidden;
+    word-wrap: break-word;
+    max-height: 75px;
+}
+.weui-search-bar__cancel-btn{
+    color: #56a4ff;
+}
+.no_sample_list{
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    font-size: 1rem;
+    color: #999;
+}
+.search-sample{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+.sample_view{
+    height: 1460px;
+}
+action-sheet-item.warn {
+    color: #e64340;
+}
+
+.black{
+    height: 40px;
+    width: 100%;
+    display: block;
+    visibility: hidden;
+    position: absolute;
+}
+/*底部导航条*/
+.tabbar{
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    margin-left: -25px;
+    margin-bottom: 5px;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+  
+}
+.tabbar image{
+    width: 45px;
+    height: 45px;
+}
+.add_new{
+ text-align: center;  
+ height: 270px;
+ background: #fff;
+ width: 100%;
+ line-height: 270px; 
+}
+.add_new image{
+    text-align: center;
+    height: 45px;
+    width: 45px;
+}
+.add_new text{
+    font-size: 5rem;
+    color: #4a4a4a;
+}
+.image-style {
+  /*height: 150rpx;
+  width: 150rpx;*/
+  position: absolute;
+  /*bottom: 250rpx;
+  right: 100rpx;*/
+  opacity: 0;
+}
+
+.image-plus-style {
+  /*height: 150rpx;
+  width: 150rpx;*/
+  position: absolute;
+  /*bottom: 250rpx;
+  right: 100rpx;*/
+  z-index: 100;
+}

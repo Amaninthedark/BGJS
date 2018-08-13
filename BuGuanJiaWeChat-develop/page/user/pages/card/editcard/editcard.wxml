@@ -1,0 +1,74 @@
+<!--pages/user/editcard/editcard.wxml-->
+<view class="page_footer">
+  
+
+  <form class="form_wrap" bindsubmit="bindFormSubmit">  
+    <view class="weui-cells weui-cells_after-title">
+      
+      <view class="cell_wrap">
+        <view class="img_wrap" bindtap="chooseHeadImage">
+          <image wx:if="{{avatar}}" src="{{avatar}}" class="card_img" mode="aspectFit"></image>
+          <image src="/image/upload_card_img.png" class="card_upload_img" mode="aspectFit"></image>
+        </view> 
+        <view class="content_wrap">
+          <view class="weui-cell">
+            <label class="weui-label cell_short">姓名<text class="text_need">*</text></label>
+            <input class="cell_input" placeholder="输入姓名"   value="{{userName}}" name="userName"/>
+          </view>
+          <view class="weui-cell">
+           <label class="weui-label cell_short">手机<text class="text_need">*</text></label>
+            <input class="cell_input"  placeholder="输入手机"  bindinput="telephoneChange" value="{{telephone}}" disabled="{{!showcode}}"/>
+            <button class="btn_yz" bindtap="yzpress" disabled="{{disabled}}" hidden="{{!showcode}}">{{code_message}}</button>
+          </view>
+        </view>
+      </view>
+      
+      <view class="weui-cell" hidden="{{!showcode}}">
+        <label class="weui-label">验证码<text class="text_need">*</text></label>
+        <input class="cell_input"  placeholder="输入验证码" bindblur="codeChange" value="{{code}}"/>
+        <button class="btn_yz" hidden="{{!isbind}}" bindtap="sync_userinfo">同步布管家信息</button>
+      </view>
+      <view class="weui-cell">
+        <label class="weui-label">公司名称<text class="text_need">*</text></label>
+        <input class="cell_input"  placeholder="输入公司名称"  value="{{companyName}}" name="companyName"/>
+      </view>
+       <view class="weui-cell">
+        <label class="weui-label">公司职务</label>
+        <input class="cell_input"  placeholder="输入公司职务"  value="{{position}}" name="position"/>
+      </view>
+      <view class="weui-cell">
+        <label class="weui-label">公司地址</label>
+        <input class="cell_input"  placeholder="输入公司地址" value="{{address}}" name="address"/>
+      </view>
+      <view class="weui-cell">
+        <label class="weui-label">电子邮箱</label>
+        <input class="cell_input" placeholder="输入电子邮箱" value="{{email}}" name="email"/>
+      </view>
+      <view class="weui-cell">
+        <label class="weui-label">传真号码</label>
+        <input class="cell_input" placeholder="输入传真号码" value="{{fax}}" name="fax"/>
+      </view>
+    </view>
+
+    <view class="weui-cells" hidden="true">
+      <view class="weui-cell company_info_cell">
+        <label class="weui-label" id="company_label">公司简介</label>
+        <textarea class="cell_input cell_textarea" placeholder="请输入公司简介" name="companyDesc" value="{{companyDesc}}"/>
+      </view>
+    </view>
+
+    <view class="weui-cells" hidden="true">
+      <view class="img_cell">
+        <label class="img_label">公司相册</label>
+        <image class="upload_img" src="/image/upload_img.png" bindtap="chooseCompanyImage"></image>
+        <block wx:for="{{files}}" wx:key="*this">
+          <image class="upload_img" src="{{item}}" mode="aspectFill" bindtap="previewImage" id="{{item}}"/>
+        </block>
+      </view>
+    </view>
+    <button formType="submit" class="btn_view">保存名片</button>
+  </form> 
+
+
+  
+</view>

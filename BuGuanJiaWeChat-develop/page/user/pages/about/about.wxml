@@ -1,0 +1,21 @@
+
+<view class="page"> 
+    <view class="header_box linear">
+        <view class="header_img"> <image src="/image/logo.png"/></view>
+        <view class="header_title"><text>布管家</text></view>      
+    </view>
+    <view class="content">
+    知布-布管家“由绍兴知布信息科技有限公司研发,是国内领先的纺织管理系统,提供样品管理,快捷推样,标签打印,电子样册,移动办公,多人协作等功能,无需安装,可直接在电脑手机上在线使用。实现了纺织面料样品多方位智能化管理，使工作更简单、更高效。
+    </view>
+    <view class="contact">
+        <text class="title">联系我们</text>
+        <text>地址：浙江省绍兴市柯桥区财富大厦11楼</text>
+        <text>电话：0575-88035653</text>
+        <text>邮箱：suppoort@buguanjia.com</text>
+    </view>
+    <view class="contact">
+        <text>更多功能请用电脑访问</text>
+        <text>布管家网站：www.buguanjia.com</text>
+       
+    </view>
+</view>

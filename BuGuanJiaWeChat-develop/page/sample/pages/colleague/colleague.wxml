@@ -1,0 +1,177 @@
+<view class="page colleague_page" bindtap="hideEdit">
+
+    <view class="page_hd"></view>
+
+   <view class="container" hidden="{{searchResult}}">
+    
+    <view wx:for="{{companyUsers}}" wx:key="{{index}}">
+      <view class="type"><text>{{item.name}}</text></view>
+
+      <view  class="item manage_item" wx:for="{{item.list}}" wx:key="{{index}}" >
+        <image class="avatar_img" src="{{item.avatar}}?x-oss-process=image/resize,m_fill,h_50,w_50" data-src="{{item.avatar}}"></image>
+        <view class="desc name_desc">
+            <text>{{item.name}}</text>
+          
+        </view>
+        <view class="desc">
+            <text>{{item.mobile}}</text> 
+        </view>
+                   
+      </view>
+
+    </view>
+    <!-- <view class="type"  hidden="{{companyUsers.length==0}}"><text>管理员</text></view>
+    <view  class="item manage_item" wx:for="{{companyUsers}}" wx:key="{{index}}" wx:if="{{item.roleType==0}}">
+        <image class="avatar_img" src="{{item.avatar}}?x-oss-process=image/resize,m_fill,h_50,w_50" data-src="{{item.avatar}}"></image>
+        <view class="desc name_desc">
+            <text wx:if="{{item.roleType==0}}">{{item.name}}</text>
+          
+        </view>
+        <view class="desc">
+            <text wx:if="{{item.roleType==0}}">{{item.mobile}}</text> 
+        </view>
+                   
+    </view>
+    <view class="type" hidden="{{companyUsers.length==1}}"><text>员工</text></view> -->
+    <!--<view class="item" wx:if="{{companyUsers.length==1}}">
+        <view class="desc none_desc">
+            <text>暂无员工</text>
+          
+        </view>
+    </view>-->
+   <!--item-->
+    <!-- <view  class="item" wx:for="{{companyUsers}}" wx:key="{{index}}" wx:if="{{item.roleType==1}}">
+        <image class="avatar_img" src="{{item.avatar}}?x-oss-process=image/resize,m_fill,h_50,w_50" data-src="{{item.avatar}}"></image>
+ 
+        <view class="desc name_desc">
+            <text wx:if="{{item.roleType==1}}">{{item.name}}</text>
+          
+        </view>
+        <view class="desc">
+            <text wx:if="{{item.roleType==1}}">{{item.mobile}}</text>
+        </view> -->
+          <!--<view class="weui-cell__bd desc">
+              <text wx:if="{{item.roleType==1}}">员工</text>
+              <text wx:else>管理员</text>
+          </view>-->
+          <!-- <view  wx:if="{{item.roleType==1}}" class="weui-cell__bd desc set_desc">
+            <view class="slide" data-id="{{item.companyUserId}}" data-userid="{{item.userId}}" catchtap="changeEditType">
+                <image wx:if="{{item.showEdit==false}}" src="/image/more.png"/>
+                <image wx:else src="/image/slide-down.png"/>
+                  <view class="area" hidden="{{!item.showEdit}}">
+                            <view class="dot_item dot_top"></view>
+                            <view class="edit_content">
+                        
+                            <view class="edit_company action" catchtap="toSet">设为管理员</view>
+                            <view class="delete_company action" catchtap="toRemove">移除员工</view>
+                            </view>
+                  </view>
+          </view>
+      </view>    
+    </view> -->
+   <!--item-->
+  </view>
+
+  <!-- <view class="container" hidden="{{!searchResult}}">
+    
+    <view class="type"><text>搜索结果</text></view>
+    <view  class="item" wx:for="{{companyUsers}}" wx:key="{{index}}" wx:if="{{item.roleType==0}}">
+        <image class="avatar_img" src="{{item.avatar}}?x-oss-process=image/resize,m_fill,h_50,w_50" data-src="{{item.avatar}}"></image>
+       
+        <view class="desc name_desc">
+            <text wx:if="{{item.roleType==0}}">{{item.name}}</text>
+          
+        </view>
+        <view class="desc">
+            <text wx:if="{{item.roleType==0}}">{{item.mobile}}</text>
+          
+        </view>
+         
+           
+      
+          
+    </view>
+   
+    <view class="item" wx:if="{{companyUsers.length==0}}">
+        <view class="desc none_desc">
+            <text>无该员工</text>
+            
+        </view>
+    </view>
+ 
+    <view  class="item" wx:for="{{companyUsers}}" wx:key="{{index}}" wx:if="{{item.roleType==1}}">
+        <image class="avatar_img" src="{{item.avatar}}?x-oss-process=image/resize,m_fill,h_50,w_50" data-src="{{item.avatar}}"></image>
+       
+        <view class="desc name_desc">
+            <text wx:if="{{item.roleType==1}}">{{item.name}}</text>
+          
+        </view>
+        <view class="desc">
+            <text wx:if="{{item.roleType==1}}">{{item.mobile}}</text>
+          
+        </view>
+         
+         <view  wx:if="{{item.roleType==1}}" class="weui-cell__bd desc set_desc">
+         
+            <view class="slide" data-id="{{item.companyUserId}}" data-userid="{{item.userId}}" catchtap="changeEditType">
+                <image wx:if="{{item.showEdit==false}}" src="/image/more.png"/>
+                <image wx:else src="/image/slide-down.png"/>
+                <view class="area" hidden="{{!item.showEdit}}">
+                        <view class="dot_item dot_top"></view>
+                        <view class="edit_content">
+                    
+                        <view class="edit_company action" catchtap="toSet">设为管理员</view>
+                        <view class="delete_company action" catchtap="toRemove">移除员工</view>
+                        </view>
+                </view>
+          </view>
+      </view>
+      
+          
+    </view>
+  </view> -->
+
+
+
+    <view class="btn_group" hidden="{{!showInvite}}">
+        <button class="share_btn" bindtap="handleShowInviteBox"><image class="share_img" src="/image/userShare.png"/></button>
+    </view>
+    
+
+    <view class="btn_group" wx:if="{{payStatus == 1}}" hidden="{{showInvite || invitePage}}">
+        <text>员工人数已满（30），邀请功能受限</text>
+    </view> 
+    <view class="btn_group" wx:if="{{payStatus == 0}}" hidden="{{invitePage}}">
+        <text>邀请功能受限,付费后可邀请</text>
+    </view>
+
+    <view class="loading-view">
+      <loading hidden="{{!loading}}">
+        加载中...
+      </loading>
+   </view>
+    <view class="invite-select-box" hidden="{{!showInviteBox}}">
+      <view class="invite-box-title">邀请成员</view>
+      <view class="invite-box-tip">请为想要邀请的成员预设定角色（默认： 没有角色组，角色为待确认）</view>
+      <view class="picker-item">
+        <picker mode="selector" range="{{groupsName}}" value="{{groupIndex}}" bindchange="handleGroupSelect">
+          <text>{{groupsName[groupIndex]}}</text>
+        </picker>
+      </view>
+      <view class="picker-item">
+        <picker mode="selector" range="{{rolesName}}" value="{{roleIndex}}" bindchange="handleRoleSelect">
+          <text>{{rolesName[roleIndex]}}</text>
+        </picker>
+      </view>
+      <view class="picker-item"></view>
+      <view>
+        <button type='primary' loading="{{loadInviteCode}}" style="background-color: #20a0ff;" open-type="share">
+          点击邀请
+          <text wx:if="{{groupsId[roleIndex] || rolesId[roleIndex]}}">({{groupsId[roleIndex] ? groupsName[groupIndex] : ''}} {{rolesId[roleIndex] ? rolesName[roleIndex] : ''}})</text>
+        </button>
+        </view>
+
+      <view><button type="warn" bindtap="handleHideInviteBox">关闭</button></view>
+      
+    </view>
+</view>

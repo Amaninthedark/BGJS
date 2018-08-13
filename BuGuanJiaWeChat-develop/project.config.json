@@ -1,0 +1,139 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wx1ceaa5c7edbd30f1",
+	"projectname": "%E5%B8%83%E7%AE%A1%E5%AE%B6%E8%81%94%E7%B3%BB%E4%BA%BA",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 16,
+			"list": [
+				{
+					"id": -1,
+					"name": "联系人",
+					"pathName": "page/contact/contact",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商机",
+					"pathName": "page/bussoppor/bussoppor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商机详情",
+					"pathName": "page/bussoppor/pages/bussDetail/bussDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商机搜索",
+					"pathName": "page/bussoppor/pages/searchBuss/searchBuss",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索联系人",
+					"pathName": "page/bussoppor/pages/searchContact/searchContact",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "page/user/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "联系人",
+					"pathName": "page/contact/contact",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "客户",
+					"pathName": "page/customer/customer",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "客户详情",
+					"pathName": "page/customer/pages/customerDetail/customerDetail",
+					"query": "",
+					"scene": "1008"
+				},
+				{
+					"id": -1,
+					"name": "供应商",
+					"pathName": "page/Supplier/Supplier",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "center",
+					"pathName": "page/center/center",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "11",
+					"pathName": "page/contact/pages/contactDetail/contactDetail",
+					"query": "",
+					"scene": "1008"
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "page/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商机",
+					"pathName": "page/order/pages/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "查询",
+					"pathName": "page/order/pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "查联系人",
+					"pathName": "page/bussoppor/pages/searchContact/searchContact",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "销货列表",
+					"pathName": "page/order/pages/sellDetail/sellDetail"
+				}
+			]
+		}
+	}
+}

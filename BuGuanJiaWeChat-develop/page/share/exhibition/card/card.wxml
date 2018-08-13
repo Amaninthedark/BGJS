@@ -1,0 +1,25 @@
+
+<view class="page">
+   <view class="container">
+   
+    <view wx:if="{{contacts.length==0}}"  class="none_item">
+           
+            <view class="weui-cell__bd desc none_card">无分享内容</view>
+         
+      </view>
+      <view  class="item">
+            <image wx:if="{{contact.cardFront}}" src="{{contact.cardFront}}?x-oss-process=image/resize,m_fill,h_70,w_110" data-src="{{contact.cardFront}}" bindtap="toCardDetail"></image>
+            <view wx:else class="card linear"><text>{{contact.name}}</text></view>
+            <view class="weui-cell__bd desc" bindtap="toSampleList">已添加<text>{{samples.length}}</text>个样品</view>
+            <!--<view class="weui-cell__bd desc">{{contact.contactId}}</view>-->
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+
+    </view>
+       <view class="loading-view">
+    <loading hidden="{{!loading}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+  </view>
+ 
+</view>

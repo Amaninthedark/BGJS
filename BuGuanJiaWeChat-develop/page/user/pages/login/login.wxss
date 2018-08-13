@@ -1,0 +1,63 @@
+@import "../../../common/index.wxss";
+.page{
+ padding: 20px;
+ background: #fff;
+ height: 100%;
+}
+.title{
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.form{
+  margin-top: 20px;
+}
+input{
+
+  height: 40px;
+  line-height: 40px;
+ 
+  font-size: 0.865rem;
+  overflow: hidden;
+  padding-left: 16px;
+  letter-spacing: 0.15em;
+ 
+
+  
+}
+
+.input{
+ border-bottom: 1px solid #e1e0e1;
+ display: flex;
+ margin-top: 20px;
+ 
+ 
+}
+.input image{
+  width: 20px;
+  height: 27px;
+  margin-top: 3px;
+
+}
+.btn{
+  margin-top: 40px;
+}
+.login_btn{
+  background: #9b9b9b;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+}
+.btn_hover{
+  background: #56a4ff;
+}
+.icon_tip{
+  margin-top: 10px;
+ float: right;
+ text-align: right;
+ width: 40%;
+ margin-right: 5px;
+}

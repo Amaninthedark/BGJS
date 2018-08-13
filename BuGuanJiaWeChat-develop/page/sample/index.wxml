@@ -1,0 +1,85 @@
+
+<view class="container">
+
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <view class="page-section-ctn companys">      
+        <view class="shadow" hidden="{{!showContent}}" bindtap="hiddenContent"></view>
+          <view class="item linear_demo" wx:for="{{companys}}" wx:if="{{companys.length === 1 && item.type==1}}" wx:key="{{index}}"  id="{{item.companyId}}" data-name="{{item.name}}" name="{{item.name}}" bindtap="toSampleList">
+            <view class="actionBar join">
+              <view class="icon">
+                <image  wx:if="{{item.companyId==companyId}}" class="default_icon" src="/image/default_company.png"/>
+                <image  wx:else class="default_icon" src="/image/not_default_company.png" data-id="{{item.companyId}}" catchtap="setDefaultCompany"/>
+              </view>
+            </view>
+            <text class="name name_bar">{{item.name}}</text>
+          </view>
+          <!--示例样品间 end-->
+     
+          <!--管理的免费样品间 start-->
+          <view wx:for="{{companys}}" class="item {{item.payStatus==1 ? 'linear_pay' : 'linear_free'}}"  wx:if="{{item.type==0 && (item.payStatus != 2 || item.roleId == 1)}}" wx:key="{{index}}" id="{{item.companyId}}" data-name="{{item.name}}" name="{{item.name}}"  bindtap="toSampleList">
+            <view class="actionBar manage">
+                <view class="icon">
+                 <image  wx:if="{{item.payStatus==1}}" class="pay_icon" src="/image/pay_company.png"/>
+                 
+                </view>
+                 <view class="icon">
+                  <image  wx:if="{{item.companyId==companyId}}" class="default_icon" src="/image/default_company.png"/>
+                  <image  wx:else class="default_icon" src="/image/not_default_company.png" data-id="{{item.companyId}}" catchtap="setDefaultCompany"/>
+                </view>
+                <view class="icon" wx:if="{{item.manageAuthority}}"  data-index="{{index}}"  data-id="{{item.companyId}}" catchtap="showContent">
+                  <image class="set_icon" src="/image/set_icon.png"/>
+                
+                  <view class="area" hidden="{{!item.showContent}}">
+                    <view class="dot_item dot_top"></view>
+                    <view class="edit_content">
+                      <view class="edit_colleague action" wx:if="{{item.companyUserAuthority}}" data-id="{{item.companyId}}" data-name="{{item.name}}" data-paystatus="{{item.payStatus}}" catchtap="toColleague">成员</view>
+                      <view class="edit_company action" wx:if="{{item.companyInfoAuthority}}" data-id="{{item.companyId}}" catchtap="toEdit">编辑</view>
+                      <view class="delete_company action" wx:if="{{item.deleteAuthority}}"  data-id="{{item.companyId}}" catchtap="showDelete">删除</view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+            <!--<image  id="{{item.companyId}}" data-name="{{item.name}}" name="{{item.name}}" bindtap="toSampleList" class="image" src="http://image.buguanjia.net/cover.jpg"/>-->
+            <text class="name name_bar">{{item.name}}\n<text wx:if="{{item.endTime}}" class="time_bar">到期时间:{{item.endTime}}</text></text>
+          </view>
+         <!--管理的免费样品间 end-->    
+      </view>
+
+      <navigator wx:if="{{createCompanyLen < 5}}" class="item item_new" url="/page/company/pages/addCompany/addCompany">
+          
+            <view class="add_new"> 
+            <image class="add_img" src="/image/add_new.png"/>            
+          </view>
+          <text class="add_new">新建样品间</text>
+      </navigator>
+
+      <view class="item linear_demo" wx:for="{{companys}}" wx:if="{{companys.length !== 1 && item.type==1}}" wx:key="{{index}}"  id="{{item.companyId}}" data-name="{{item.name}}" name="{{item.name}}" bindtap="toSampleList">
+        <view class="actionBar join">
+          <view class="icon">
+            
+          </view>
+        </view>
+        <text class="name name_bar">{{item.name}}</text>
+      </view>
+      <view class="item item_new item_invite" wx:for="{{inviteCompanys}}" wx:key="{{index}}">
+        <view class="add_new" style="margin-top:50rpx;"> 
+            <image class="add_img" src="/image/company_invite.png"/>            
+        </view>
+        <text>{{item.inviterName}}邀请你加入{{item.companyName}}</text>
+        <view class="invite-btn-box">
+            <view class="no-btn" data-key="{{item.invitationCode}}" data-type="0" bindtap="handleDealInvite">拒绝</view>
+            <view class="ok-btn" data-key="{{item.invitationCode}}" data-type="1" bindtap="handleDealInvite">同意</view>
+        </view>
+      </view>
+    </view>
+    
+    
+    <modal class="modal" hidden="{{!showDelete}}" title="样品间删除验证" confirm-text="确定" confirm-color="#56a4ff" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+        <input placeholder="{{placeholder}}" value="{{message}}" class="input_add" bindinput="messageBind"/>
+    </modal>
+  
+  
+  </view>
+
+</view>

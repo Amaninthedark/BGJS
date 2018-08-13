@@ -1,0 +1,28 @@
+<view class="head-search flex-box">
+  <icon class="icon-search" type="search" size="14"></icon>
+  <input type="text" class="flex-5" placeholder="请输入样品编号" focus  value="{{inputVal}}" bindinput="serachSample"/>
+  <view class="flex-1 search-btn" bindtap="handleSearch">搜索</view>
+</view>
+<view class="content">
+   <view class="sample-image">
+      <view class="text"> <text>样品图片</text></view>
+      <view class="btn-group">
+         <button  data-key=""  class="{{hasImage === '' ? 'active' : ''}}" catchtap="handleImgChoose">全部</button>
+   
+         <button  data-key="1" class="{{hasImage === '1' ? 'active' : ''}}" catchtap="handleImgChoose">有图</button>
+
+         <button  data-key="0" class="{{hasImage === '0' ? 'active' : ''}}" catchtap="handleImgChoose">无图</button>
+         <button  style="visibility: hidden;"></button>
+      </view>
+   </view>
+      <!-- <view class="text"><text>标记云</text></view>
+   <view class="tab-cloud">
+      <view wx:for="{{tab_cloud}}" wx:key="{{index}}" class="tab-cloud-item"  data-id="{{item.tagId}}" catchtap="chooseOrCancel">
+          <button  class="{{item.choosed ? 'tab-button-choosed' : ''}}">{{item.name}} <text class="count"> {{item.count}}</text></button>
+      </view>
+   </view> -->
+</view>
+<view class="footer">
+<button class="reset" catchtap="reset" >重置</button>
+<button class="comfirm" type="default" catchtap="comfirm">确定</button>
+</view>
